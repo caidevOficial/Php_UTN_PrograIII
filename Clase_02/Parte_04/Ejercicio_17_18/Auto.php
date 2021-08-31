@@ -26,7 +26,7 @@
 /**
  * Class Auto
  */
-class Auto(){
+class Auto{
     private $_color;
     private $_precio;
     private $_marca;
@@ -62,7 +62,7 @@ class Auto(){
      * 
      * @param AUTO $auto Car to be printed.
      */
-    public function static MostrarAuto(Auto $auto){
+    public static function MostrarAuto(Auto $auto){
         echo "<br>Color: " . $auto->_color;
         echo "<br>Marca: " . $auto->_marca;
         echo "<br>Precio: " . $auto->_precio;
@@ -88,7 +88,7 @@ class Auto(){
      * brand and color, 0 otherwise.
      */
     public static function Add($auto1, $auto2){
-        if($auto1->_marca == $auto2->_marca && $auto1->_color == $auto2->_color){
+        if($auto1->Equals($auto2) && $auto1->_color == $auto2->_color){
             return $auto1->_precio + $auto2->_precio;
         }else{
             return 0;
