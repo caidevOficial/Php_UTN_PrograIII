@@ -15,24 +15,51 @@
 * @author Facu Falcone
 */
 
-require "Auto.php";
+include "Auto.php";
 
-$auto1 = new Auto("Rojo", "","Ford","");
-$auto2 = new Auto("Negro", "","Ford","");
+$CarsList = array();
 
-$auto3 = new Auto("Blanco", 600000, "Ford","");
-$auto4 = new Auto("Blanco", 500000, "Ford","");
-$auto5 = new Auto("Blanco", 550000, "Fiat", "25/02/1990");
+$auto1 = new Auto("Rojo", "Ford");
+$auto2 = new Auto("Blanco", "Fiat");
+
+$auto3 = new Auto("Blanco", "Ford", 600000);
+$auto4 = new Auto("Blanco", "Ford", 500000);
+$auto5 = new Auto("Blanco", "Fiat", 550000, "05/02/1996");
 
 $auto3->AgregarImpuesto(1500);
 $auto4->AgregarImpuesto(1500);
 $auto5->AgregarImpuesto(1500);
-
+array_push($CarsList, $auto1, $auto2, $auto3, $auto4, $auto5);
 $sumPrices = Auto::Add($auto1, $auto2);
 $same1and2 = $auto1->Equals($auto2);
 $same1and5 = $auto1->Equals($auto5);
+
 echo "El resultado de la suma de los precios de auto 1 y auto 2 es: $sumPrices <br>";
 echo "El resultado de comparar auto 1 y auto 2 es: $same1and2 <br>";
 echo "El resultado de comparar auto 1 y auto 5 es: $same1and5 <br>";
+
+for ($i=0; $i < count($CarsList); $i+=2) {
+    if ($i%2 == 0) {
+        Auto::MostrarAuto($CarsList[$i]);
+        echo "<br>";
+    }
+}
+var_dump($CarsList);
+if(Auto::PersistenceCSV($CarsList, "autos.csv")>0){
+    echo "Se ha guardado el archivo correctamente";
+}else{
+    echo "No se ha podido guardar el archivo";
+}
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+echo "Autos leidos del archivo: <br>";
+$autosLeidos = Auto::ReadCSV();
+
+foreach ($autosLeidos as $auto) {
+    Auto::MostrarAuto($auto);
+    echo "<br>";
+}
 
 ?>
