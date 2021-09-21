@@ -27,11 +27,13 @@
  * Class Auto
  */
 class Auto{
+    //--------- Attributes ---------
     private $_color;
     private $_precio;
     private $_marca;
     private $_fecha;
 
+    //--------- Constructor ---------
     /**
      * Auto constructor.
      *
@@ -47,6 +49,65 @@ class Auto{
         $this->_fecha = $fecha;
     }
 
+    //--------- Setters ---------
+
+    /**
+     * Sets the color of the car.
+     * @param string $color Color of the car (red, blue, black, etc.).
+     */
+    function setColor($color){
+        if (is_string($color) && !empty($color)) {
+            $this->_color = $color;
+        }
+    }
+
+    /**
+     * Sets the price of the car if is higher than 0.
+     * @param float $precio Price of the car.
+     */
+    function setPrecio($precio){
+        if (is_float($precio) && $precio > 0) {
+            $this->_precio = $precio;
+        }
+    }
+    
+    /**
+     * Sets the brand of the car.
+     * @param string $marca The brand of the car.
+     */
+    function setMarca($marca){
+        if (is_string($marca) && !empty($marca)) {
+            $this->_marca = $marca;
+        }
+    }
+
+    //--------- Getters ---------
+
+    /**
+     * Gets the color of the car.
+     * @return string Color of the car.
+     */
+    function getColor(){
+        return $this->_color;
+    }
+
+    /**
+     * Gets the price of the car.
+     * @return float Price of the car.
+     */
+    function getPrecio(){
+        return $this->_precio;
+    }
+
+    /**
+     * Gets the brand of the car.
+     * @return string Brand of the car.
+     */
+    function getMarca(){
+        return $this->_marca;
+    }
+
+    //--------- Methods ---------
     /**
      * It adds a tax to the price of the car.
      *
@@ -81,7 +142,6 @@ class Auto{
 
     /**
      * It sums the price of the car by parameter and the price of the car.
-     *
      * @param Auto $auto1 First car to be summed.
      * @param Auto $auto2 Second car to be summed.
      * @return double Sum of the prices of the cars if they have the same 
@@ -95,15 +155,17 @@ class Auto{
         }
     }
 
+    /**
+     * It prints the information of the car. 
+     * @return string Information of the car.
+     */
     public function CartoRow(){
         return $this->_color . "," . $this->_marca . "," . $this->_precio . "," . $this->_fecha.PHP_EOL;
     }
 
     /** 
      * It saves an array of cars in a file.
-     * 
      * @param array $arrayAutos Array of cars to be saved.
-     * 
      */
     public static function PersistenceCSV($arrayAuto, $fileName='autos.csv'): bool{
         $success = 0;
@@ -116,22 +178,9 @@ class Auto{
         return $success;
     }
 
-    private static function DeleteEmptyIndexOfArray($array){
-        foreach ($array as $key => $value) {
-            if (empty($value)) {
-                unset($array[$key]);
-            }
-        }
-
-        return $array;
-    }
-
-
     /**
      * It loads an array of cars from a file.
-     * 
      * @param string $fileName Name of the file to be loaded.
-     * 
      * @return array Array of cars loaded from the file.
      */
     public static function ReadCSV($fileName='autos2.csv'): array{
@@ -146,7 +195,6 @@ class Auto{
                 array_push($arrayAutos, $auto);
             }
         }
-        $user = "CaidevOficial";
         fclose($file);
 
         return $arrayAutos;
