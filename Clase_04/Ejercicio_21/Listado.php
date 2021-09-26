@@ -30,6 +30,13 @@
     var_dump($option);
 
     switch ($option) {
+        case 'show':
+            if(Usuario::ReadCSV()){
+                echo "Usuarios cargados correctamente";
+            }else{
+                echo "Error al cargar los usuarios";
+            }
+            break;
         case 'create':
             $user = new Usuario($name, $password, $email);
             if($user->GuardarCSV()){
