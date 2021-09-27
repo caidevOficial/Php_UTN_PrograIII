@@ -115,7 +115,7 @@ class Product{
      * @param string $code The barCode of the product.
      */
     public function setCode($code){
-        if (!empty($code) && is_string($code) && strlen($code) < 7){
+        if (!empty($code) && is_string($code) && strlen($code) == 6){
             $this->_code = $code;
         }
     }
