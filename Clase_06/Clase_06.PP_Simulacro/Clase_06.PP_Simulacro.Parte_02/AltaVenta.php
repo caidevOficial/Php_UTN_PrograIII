@@ -23,6 +23,7 @@
 require_once 'Pizza.php';
 require_once 'Venta.php';
 require 'DataAccess.php';
+require_once 'UploadManager.php';
     
     //--- Sets the timezone to use. ---//
     date_default_timezone_set('America/Argentina/Buenos_Aires');
@@ -35,7 +36,10 @@ require 'DataAccess.php';
         $pTipo = $_POST['Tipo'];
         $pCantidad = intval($_POST['Cantidad']);
 
+        //--- Instance of the DataAccess class. ---//
         $daoManager = DataAccess::GetDAO();
+        
+        
 
         //--- Creates a new instance of the Pizza class. ---//
         $myPizza = new Pizza(null, $pSabor, null, $pTipo, $pCantidad);
@@ -47,8 +51,11 @@ require 'DataAccess.php';
         if(Pizza::UpdateArray($myPizza, "sub")){
             // Agrego a BBDD la venta
             $venta = Venta::CreateVenta($vEmail, $myPizza);
-
             $venta->insertIntoDB($daoManager);
+            
+            //--- Instance of the class UploadManager. ---//
+            $imagesDirectory = "./ImagenesDeLaVenta/";
+            $UpManager = new UploadManager($imagesDirectory, $venta, $_FILES);
             echo 'Venta Cargada con exito.<br>';
         }else{
             echo 'No hay stock de la pizza seleccionada<br>';

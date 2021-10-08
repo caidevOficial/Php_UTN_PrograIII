@@ -154,7 +154,7 @@ class Pizza{
      * @param string $action The action to do.
      */
     public static function UpdateArray($pizza, $action):bool{
-        $filePath = 'Clase_06.PP_Simulacro.Parte_02/Pizza.json';
+        $filePath = 'Pizza.json';
         $arrayOfpizzas = Pizza::ReadJSON($filePath);
         Pizza::SearchFor($arrayOfpizzas, $pizza->getSabor(), $pizza->getTipo());
 
