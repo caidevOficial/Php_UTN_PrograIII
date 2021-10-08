@@ -112,14 +112,14 @@ class Pizza{
      */
     public function pizzaInArray($arraypizzas):bool{
         if(!empty($arraypizzas)){
-            echo 'No esta vacio';
+            echo "The array isn't empty<br>";
             foreach ($arraypizzas as $pizza) {
                 if ($this->__Equals($pizza)) {
                     return true;
                 }
             }
         }else{
-            echo 'Esta vacio';
+            echo 'Array Empty<br>';
         }
         return false;
     }
@@ -140,7 +140,7 @@ class Pizza{
         if (!$pizza->pizzaInArray($arrayOfpizzas)) {
             if ($action == "add") {
                 array_push($arrayOfpizzas, $pizza);
-                echo "pizza not in existence, added.";
+                $message =  "pizza not in existence, added.<br>";
             }
         }else{
             foreach ($arrayOfpizzas as $aPizza) {
@@ -154,9 +154,9 @@ class Pizza{
                     }else if($action == "sub"){
                         if($aPizza->getCantidad() >= $pizza->getCantidad()){
                             $aPizza->setCantidad($aPizza->getCantidad() - $pizza->getCantidad());
-                            $message =  "pizza Sold";
+                            $message =  "pizza Sold<br>";
                         }else{
-                            $message =  "pizza not enough stock";
+                            $message =  "pizza not enough stock<br>";
                         }
                     }
                     break;
@@ -164,7 +164,7 @@ class Pizza{
             }
         }
 
-        Pizza::SaveToJSON($arrayOfpizzas);
+        Pizza::SaveToJSON($arrayOfpizzas, 'Clase_06.PP_Simulacro.Parte_01/Pizza.json');
 
         return $message;
     }
@@ -185,8 +185,10 @@ class Pizza{
             echo 'Si Hay';
         }else if($sTipo){
             echo 'Solo hay de tipo: '.$tipo;
-        }else{
+        }else if($sSabor){
             echo 'Solo hay de sabor: '.$sabor;
+        }else{
+            echo 'No hay Pizzas '.$tipo.' ni de sabor '.$sabor.'<br>';
         }
     }
 

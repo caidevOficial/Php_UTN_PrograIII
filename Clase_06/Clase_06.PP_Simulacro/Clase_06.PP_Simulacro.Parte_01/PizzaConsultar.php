@@ -33,7 +33,6 @@ require_once 'Pizza.php';
         echo '<h1>Pizzas a Buscar</h1>';
         echo '<h1> Sabor: '.$pSabor.' Tipo: '.$pTipo.'</h1>';
 
-        
         //--- Adds or update the new Pizza to the array. ---//
         $myArray = Pizza::ReadJSON();
         Pizza::SearchFor($myArray, $pSabor, $pTipo);
