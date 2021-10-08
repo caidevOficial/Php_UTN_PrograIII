@@ -20,7 +20,7 @@
  * @author Facundo Falcone <CaidevOficial> 
 */
 
-$_DELETE = array();
+//$_DELETE = array();
 $method = $_SERVER['REQUEST_METHOD'];
 
 //--- Sets the timezone to use. ---//
@@ -30,17 +30,17 @@ switch ($method) {
     case 'GET':
         switch (key($_GET)) {
             case 'Cargar':
-                include 'PizzaCarga.php';
-                break;
-            case 'Consultas':
-                include 'PizzaConsultar.php';
+                include 'Clase_06.PP_Simulacro.Parte_01/PizzaCarga.php';
                 break;
             }
         break;
     case 'POST':
         switch (key($_GET)) {
             case 'Consultas':
-                include 'PizzaConsultar.php';
+                include 'Clase_06.PP_Simulacro.Parte_01/PizzaConsultar.php';
+                break;
+            case 'Venta':
+                include 'Clase_06.PP_Simulacro.Parte_02/AltaVenta.php';
                 break;
             }
         break;
