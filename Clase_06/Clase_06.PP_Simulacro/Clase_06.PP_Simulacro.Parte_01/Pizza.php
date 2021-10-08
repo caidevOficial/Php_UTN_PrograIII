@@ -133,8 +133,9 @@ class Pizza{
      * @return array The array of pizzas with the product updated or added.
      */
     public static function UpdateArray($pizza, $action):string{
+        $filePath = 'Clase_06.PP_Simulacro.Parte_01/Pizza.json';
         $message = '';
-        $arrayOfpizzas = Pizza::ReadJSON();
+        $arrayOfpizzas = Pizza::ReadJSON($filePath);
         
         // if not exist in the array, add it
         if (!$pizza->pizzaInArray($arrayOfpizzas)) {
@@ -149,7 +150,7 @@ class Pizza{
                     if($action == "add"){
                         $aPizza->setCantidad($aPizza->getCantidad() + $pizza->getCantidad());
                         $aPizza->setPrecio($pizza->getPrecio());
-                        $message =  "pizza updated.";
+                        $message =  "pizza updated.<br>";
                         // if exist and the action is sub, substract it
                     }else if($action == "sub"){
                         if($aPizza->getCantidad() >= $pizza->getCantidad()){
@@ -164,7 +165,7 @@ class Pizza{
             }
         }
 
-        Pizza::SaveToJSON($arrayOfpizzas, 'Clase_06.PP_Simulacro.Parte_01/Pizza.json');
+        Pizza::SaveToJSON($arrayOfpizzas, $filePath);
 
         return $message;
     }
