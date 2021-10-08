@@ -112,61 +112,16 @@ class Pizza{
      */
     public function pizzaInArray($arraypizzas):bool{
         if(!empty($arraypizzas)){
-            echo 'No esta vacio';
+            echo "The array isn't empty<br>";
             foreach ($arraypizzas as $pizza) {
                 if ($this->__Equals($pizza)) {
                     return true;
                 }
             }
         }else{
-            echo 'Esta vacio';
+            echo 'Array Empty<br>';
         }
         return false;
-    }
-
-    /**
-     * Updates the pizza in the array of pizzas if exist.
-     * If not exist, it will be added.
-     *
-     * @param array $arrayOfpizzas The array of pizzas.
-     * @param Pizza $product The product to update or add.
-     * @return array The array of pizzas with the product updated or added.
-     */
-    public static function UpdateArray($pizza, $action):string{
-        $message = '';
-        $arrayOfpizzas = Pizza::ReadJSON();
-        
-        // if not exist in the array, add it
-        if (!$pizza->pizzaInArray($arrayOfpizzas)) {
-            if ($action == "add") {
-                array_push($arrayOfpizzas, $pizza);
-                echo "pizza not in existence, added.";
-            }
-        }else{
-            foreach ($arrayOfpizzas as $aPizza) {
-                // if exist in the array, update it
-                if ($aPizza->__Equals($pizza)) {
-                    if($action == "add"){
-                        $aPizza->setCantidad($aPizza->getCantidad() + $pizza->getCantidad());
-                        $aPizza->setPrecio($pizza->getPrecio());
-                        $message =  "pizza updated.";
-                        // if exist and the action is sub, substract it
-                    }else if($action == "sub"){
-                        if($aPizza->getCantidad() >= $pizza->getCantidad()){
-                            $aPizza->setCantidad($aPizza->getCantidad() - $pizza->getCantidad());
-                            $message =  "pizza Sold";
-                        }else{
-                            $message =  "pizza not enough stock";
-                        }
-                    }
-                    break;
-                }
-            }
-        }
-
-        Pizza::SaveToJSON($arrayOfpizzas);
-
-        return $message;
     }
 
     public static function SearchFor($array, $sabor, $tipo){
@@ -185,9 +140,45 @@ class Pizza{
             echo 'Si Hay';
         }else if($sTipo){
             echo 'Solo hay de tipo: '.$tipo;
-        }else{
+        }else if($sSabor){
             echo 'Solo hay de sabor: '.$sabor;
+        }else{
+            echo 'No hay Pizzas '.$tipo.' ni de sabor '.$sabor.'<br>';
         }
+    }
+
+    /**
+     * Updates the pizza in the array of pizzas if exist.
+     *
+     * @param Pizza $product The product to update or add.
+     * @param string $action The action to do.
+     */
+    public static function UpdateArray($pizza, $action):bool{
+        $filePath = 'Pizza.json';
+        $arrayOfpizzas = Pizza::ReadJSON($filePath);
+        Pizza::SearchFor($arrayOfpizzas, $pizza->getSabor(), $pizza->getTipo());
+
+        // if not exist in the array, add it
+        if ($pizza->pizzaInArray($arrayOfpizzas)) {
+            foreach ($arrayOfpizzas as $aPizza) {
+
+                if ($aPizza->__Equals($pizza)) {
+                    if($action == "sub"){
+                        if($aPizza->getCantidad() >= $pizza->getCantidad()){
+                            $aPizza->setCantidad($aPizza->getCantidad() - $pizza->getCantidad());
+                            echo  "pizza Sold<br>";
+                            return Pizza::SaveToJSON($arrayOfpizzas, $filePath);
+                            //return true;
+                        }else{
+                            echo  "pizza not enough stock<br>";
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+
+        return false;
     }
 
     /**
