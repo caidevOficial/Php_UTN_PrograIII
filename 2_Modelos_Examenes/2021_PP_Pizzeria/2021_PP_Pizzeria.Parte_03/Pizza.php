@@ -143,6 +143,9 @@ class Pizza{
         return false;
     }
 
+    //--- Methods ---//
+    //--- Search Methods ---//
+
     /**
      * Gets the boolean state that indicates if the product exist in the
      * array of pizzas.
@@ -193,6 +196,8 @@ class Pizza{
             echo 'No hay Pizzas '.$tipo.' ni de sabor '.$sabor.'<br>';
         }
     }
+
+    //--- File Handler Methods ---//
 
     /**
      * Updates the pizza in the array of pizzas if exist.
