@@ -54,5 +54,12 @@
         "_precio": 250,
         "_tipo": "Piedra",
         "_cantidad": 115
+    },
+    {
+        "_id": 468,
+        "_sabor": "Especial_UTN",
+        "_precio": 299,
+        "_tipo": "Molde",
+        "_cantidad": 138
     }
 ]
