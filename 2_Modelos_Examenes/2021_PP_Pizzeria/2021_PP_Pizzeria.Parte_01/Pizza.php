@@ -35,30 +35,50 @@ class Pizza{
         $this->setCantidad($cantidad);
     }
 
+    /**
+     * Sets the id of the pizza.
+     * @param int $id The id of the pizza.
+     */
     public function setID($id){
         if (isset($id) && is_numeric($id)){
             $this->_id = $id;
         }
     }
 
+    /**
+     * Sets the flavor of the pizza.
+     * @param string $sabor The flavor of the pizza.
+     */
     public function setSabor($sabor){
         if (isset($sabor)){
             $this->_sabor = $sabor;
         }
     }
 
+    /**
+     * Sets the price of the pizza.
+     * @param float $precio The price of the pizza.
+     */
     public function setPrecio($precio){
         if (!empty($precio) && is_numeric($precio)){
             $this->_precio = $precio;
         }
     }
 
+    /**
+     * Sets the type of the pizza.
+     * @param string $tipo The type of the pizza.
+     */
     public function setTipo($tipo){
         if (isset($tipo)){
             $this->_tipo = $tipo;
         }
     }
 
+    /**
+     * Sets the quantity of the pizza.
+     * @param int $cantidad The quantity of the pizza.
+     */
     public function setCantidad($cantidad){
         if (!empty($cantidad) && is_numeric($cantidad)){
             $this->_cantidad = $cantidad;
@@ -67,22 +87,42 @@ class Pizza{
 
     //--- Getters ---//
 
+    /**
+     * Gets the id of the pizza.
+     * @return int The id of the pizza.
+     */
     public function getID(){
         return $this->_id;
     }
 
+    /**
+     * Gets the flavor of the pizza.
+     * @return string The flavor of the pizza.
+     */
     public function getSabor(){
         return $this->_sabor;
     }
 
+    /**
+     * Gets the price of the pizza.
+     * @return float The price of the pizza.
+     */
     public function getPrecio(){
         return $this->_precio;
     }
 
+    /**
+     * Gets the type of the pizza.
+     * @return string The type of the pizza.
+     */
     public function getTipo(){
         return $this->_tipo;
     }
 
+    /**
+     * Gets the quantity of the pizza.
+     * @return int The quantity of the pizza.
+     */
     public function getCantidad(){
         return $this->_cantidad;
     }
@@ -133,7 +173,7 @@ class Pizza{
      * @return array The array of pizzas with the product updated or added.
      */
     public static function UpdateArray($pizza, $action):string{
-        $filePath = 'Clase_06.PP_Simulacro.Parte_01/Pizza.json';
+        $filePath = 'Pizza.json';
         $message = '';
         $arrayOfpizzas = Pizza::ReadJSON($filePath);
         
@@ -170,6 +210,13 @@ class Pizza{
         return $message;
     }
 
+    /**
+     * Searchs the pizza in the array of pizzas and prints the result.
+     *
+     * @param array $array The array of pizzas.
+     * @param string $sabor The flavor of the pizza.
+     * @param string $tipo The type of the pizza.
+     */
     public static function SearchFor($array, $sabor, $tipo){
         $sTipo = false;
         $sSabor = false;
