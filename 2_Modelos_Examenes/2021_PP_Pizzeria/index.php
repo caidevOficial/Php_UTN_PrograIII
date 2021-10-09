@@ -30,17 +30,20 @@ switch ($method) {
     case 'GET':
         switch (key($_GET)) {
             case 'Cargar':
-                include 'Clase_06.PP_Simulacro.Parte_01/PizzaCarga.php';
+                include '2021_PP_Pizzeria.Parte_01/PizzaCarga.php';
                 break;
             }
         break;
     case 'POST':
         switch (key($_GET)) {
             case 'Consultas':
-                include 'Clase_06.PP_Simulacro.Parte_01/PizzaConsultar.php';
+                include '2021_PP_Pizzeria.Parte_01/PizzaConsultar.php';
                 break;
             case 'Venta':
-                include 'Clase_06.PP_Simulacro.Parte_02/AltaVenta.php';
+                include '2021_PP_Pizzeria.Parte_02/AltaVenta.php';
+                break;
+            case 'ConsultasVentas':
+                include '2021_PP_Pizzeria.Parte_03/ConsultasVentas.php';
                 break;
             }
         break;
