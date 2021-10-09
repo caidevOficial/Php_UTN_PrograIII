@@ -1,0 +1,42 @@
+[
+    {
+        "_id": 1,
+        "_code": "350550",
+        "_name": "Computer",
+        "_type": "desktop",
+        "_stock": "2",
+        "_price": "90000"
+    },
+    {
+        "_id": 2,
+        "_code": "350550",
+        "_name": "Computer",
+        "_type": "desktop",
+        "_stock": "75",
+        "_price": "90000"
+    },
+    {
+        "_id": 4,
+        "_code": "350550",
+        "_name": "Computer",
+        "_type": "desktop",
+        "_stock": "25",
+        "_price": "90000"
+    },
+    {
+        "_id": 5,
+        "_code": "350550",
+        "_name": "Computer",
+        "_type": "desktop",
+        "_stock": "25",
+        "_price": "90000"
+    },
+    {
+        "_id": 3,
+        "_code": "350550",
+        "_name": "Computer",
+        "_type": "desktop",
+        "_stock": "50",
+        "_price": "90000"
+    }
+]
