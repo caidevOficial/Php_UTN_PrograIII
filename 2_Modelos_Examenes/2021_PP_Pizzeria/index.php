@@ -45,6 +45,9 @@ switch ($method) {
             case 'ConsultasVentas':
                 include '2021_PP_Pizzeria.Parte_03/ConsultasVentas.php';
                 break;
+            case 'Cargar':
+                include '2021_PP_Pizzeria.Parte_04/PizzaCarga.php';
+                break;
             }
         break;
 }
