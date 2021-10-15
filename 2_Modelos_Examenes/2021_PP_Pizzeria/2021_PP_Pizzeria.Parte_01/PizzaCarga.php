@@ -22,15 +22,12 @@
 
 require_once 'Pizza.php';
     
-    //--- Sets the timezone to use. ---//
-    date_default_timezone_set('America/Argentina/Buenos_Aires');
-    
-    if(isset($_GET['sabor']) && isset($_GET['precio']) && 
-        isset($_GET['tipo']) && isset($_GET['cantidad'])){
-        $pSabor = $_GET['sabor'];
-        $pPrecio = floatval($_GET['precio']);
-        $pTipo = $_GET['tipo'];
-        $pCantidad = intval($_GET['cantidad']);
+    if(isset($_GET['Sabor']) && isset($_GET['Precio']) && 
+        isset($_GET['Tipo']) && isset($_GET['Cantidad'])){
+        $pSabor = $_GET['Sabor'];
+        $pPrecio = floatval($_GET['Precio']);
+        $pTipo = $_GET['Tipo'];
+        $pCantidad = intval($_GET['Cantidad']);
 
         //--- Creates a new instance of the Pizza class. ---//
         $pID = rand(1, 9);
