@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "f24a95c0-1024-489f-9cb6-85aa2396f832",
+		"name": "Pizzas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01_1_Pizzas.AddPizza_GET",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?Cargar=Cargar&Sabor=Champignon&Tipo=Molde&Precio=299&Cantidad=100",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?Cargar=Cargar&Sabor=Champignon&Tipo=Molde&Precio=299&Cantidad=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Pizzeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Cargar",
+									"value": "Cargar"
+								},
+								{
+									"key": "Sabor",
+									"value": "Champignon"
+								},
+								{
+									"key": "Tipo",
+									"value": "Molde"
+								},
+								{
+									"key": "Precio",
+									"value": "299"
+								},
+								{
+									"key": "Cantidad",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "01_2_Pizzas.Check_POST",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?Consultas=Consultas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Sabor",
+									"value": "Champignon",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Molde",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?Consultas=Consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Pizzeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Consultas",
+									"value": "Consultas"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02_1_Pizzas_AddSale_POST",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?Venta=Venta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Email",
+									"value": "GogetaSSJ4@DragonBallHeroes.com",
+									"type": "text"
+								},
+								{
+									"key": "Sabor",
+									"value": "Calabresa",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Piedra",
+									"type": "text"
+								},
+								{
+									"key": "Cantidad",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/Cliente_Pizza/Piedra_Pollo_GogetaSSJ4_2021-10-08.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?Venta=Venta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Pizzeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Venta",
+									"value": "Venta"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03_1_Pizzas.Queries_POST",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?ConsultasVentas=ConsultasVentas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Fecha1",
+									"value": "2021-10-01",
+									"type": "text"
+								},
+								{
+									"key": "Fecha2",
+									"value": "2021-10-16",
+									"type": "text"
+								},
+								{
+									"key": "Usuario",
+									"value": "GogetaSSJ4@DragonBallHeroes.com",
+									"type": "text"
+								},
+								{
+									"key": "Sabor",
+									"value": "Champignon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?ConsultasVentas=ConsultasVentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Pizzeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "ConsultasVentas",
+									"value": "ConsultasVentas"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04_1_Pizzas.AddPizza_POST",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?Cargar=Cargar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Sabor",
+									"value": "Champignon",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Piedra",
+									"type": "text"
+								},
+								{
+									"key": "Precio",
+									"value": "350",
+									"type": "text"
+								},
+								{
+									"key": "Cantidad",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/Pizzas/05.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?Cargar=Cargar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Pizzeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Cargar",
+									"value": "Cargar"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04_2_Pizzas.ModifySale_PUT",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NroPedido\":52,\r\n    \"Sabor\":\"Calabresa\",\r\n    \"Email\":\"GogetaSSJ4@DragonBallHeroes.com\",\r\n    \"Tipo\":\"Piedra\",\r\n    \"Cantidad\":6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php?NroPedido=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Pizzeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "NroPedido",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04_3_Pizzas.DeleteSale_DELETE",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NroPedido\":75\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Pizzeria/index.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Pizzeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "NroPedido",
+									"value": "11",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

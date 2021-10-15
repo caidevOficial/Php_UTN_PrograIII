@@ -28,9 +28,7 @@ class Venta{
     public $_pizzaType;
     public $_pizzaAmount;
 
-    public function __construct(){
-        
-    }
+    public function __construct(){}
 
     //--- Getters ---//
     
@@ -154,7 +152,9 @@ class Venta{
      * @return bool  True if the insert was successful, false otherwise.
      */
     public function insertIntoDB($DAO){
-        $sql = "INSERT INTO venta (fecha, correo_usuario, sabor_pizza, tipo_pizza, cantidad_pizza) VALUES (:fecha, :email, :sabor, :tipo, :cantidad);";
+        $sql = "INSERT INTO 
+        venta (fecha, correo_usuario, sabor_pizza, tipo_pizza, cantidad_pizza) 
+        VALUES (:fecha, :email, :sabor, :tipo, :cantidad);";
         $query = $DAO->getQuery($sql);
         $query->bindValue(':fecha', $this->_date, PDO::PARAM_STR);
         $query->bindValue(':email', $this->getUserEmail(), PDO::PARAM_STR);
@@ -173,33 +173,54 @@ class Venta{
     public static function getPizzasSoldAmount($DAO){
         $query = $DAO->getQuery("SELECT SUM(v.cantidad_pizza) AS Pizzas_Vendidas FROM venta AS v");
 		$query->execute();
-        
         echo 'Pizzas Vendidas: <strong>['.$query->fetch(PDO::FETCH_ASSOC)['Pizzas_Vendidas'].']</strong> unidades.<br>';
+    }
+
+    
+    /**
+     * Prints the info of a single Sale in a table row.
+     * @param Venta $venta The Venta object.
+     */
+    public static function printSingleSaleAsTableContent($venta){
+        echo "<tr align='center'>";
+        echo '<td>'.$venta->_date.'</td>';
+        echo '<td>'.$venta->getUserEmail().'</td>';
+        echo '<td>'.$venta->getPizzaFlavor().'</td>';
+        echo '<td>'.$venta->getPizzaType().'</td>';
+        echo '<td>'.$venta->getPizzaAmount().'</td>';
+        echo '</tr>';
+    }
+
+    /**
+     * Prints the headers of the table.
+     */
+    public static function printSaleAsTableHeader(){
+        echo '<tr>';
+        echo '<th>[Fecha]</th>';
+        echo '<th>[Correo]</th>';
+        echo '<th>[Sabor]</th>';
+        echo '<th>[Tipo]</th>';
+        echo '<th>[Cantidad]</th>';
+        echo '</tr>';
     }
 
     /**
      * Prints the info of the query as a table.
      * @param array $arrayVentas Array of the Venta objects.
      */
-    private static function printDataAsTable($arrayVentas){
+    public static function printDataAsTable($arrayVentas){
         echo "<table>";
-        echo "<th>[Fecha]</th><th>[Usuario]</th><th>[Sabor]</th><th>[Tipo]</th><th>[Cantidad]</th>";
+        self::printSaleAsTableHeader();
         foreach($arrayVentas as $venta){
-            echo "<tr align='center'>";
-            echo "<td>[".$venta->_date."]</td>";
-            echo "<td>[".$venta->getUserEmail()."]</td>";
-            echo "<td>[".$venta->getPizzaFlavor()."]</td>";
-            echo "<td>[".$venta->getPizzaType()."]</td>";
-            echo "<td>[".$venta->getPizzaAmount()."]</td>";
-            echo "</tr>";
+            self::printSingleSaleAsTableContent($venta);
         }
         echo "</table>" ;
     }
 
     /**
-     * Get the amount of pizzas sold by a specific flavor.
+     * Gets all the Sales that have pizzas by a specific flavor.
      * @param DataAccess $DAO The Data Access Object.
-     * @param string $flavor The flavor of the pizza.
+     * @param string $flavor The flavor of the pizza to search in the sales.
      */
     private static function getAllVentasByFlavor($DAO, $flavor){
         $query = $DAO->getQuery("SELECT 
@@ -214,6 +235,63 @@ class Venta{
         $query->bindValue(':flavor', $flavor, PDO::PARAM_STR);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_CLASS, "Venta");
+    }
+
+    /**
+     * Updates an specific Sale, bassed on it's id.
+     * @param DataAccess $DAO The Data Access Object.
+     * @param int $id The id of the sale to modify.
+     * @param Venta $venta The new Venta object to take it's data.
+     */
+    public static function updateVentaByID($DAO, $id, $venta){
+        $query = $DAO->getQuery("UPDATE venta
+        SET 
+        correo_usuario = :email,
+        tipo_pizza = :pType,
+        sabor_pizza = :pFlavor,
+        cantidad_pizza = :pAmount
+        WHERE numero_pedido = :vID;");
+        $query->bindValue(':email', $venta->getUserEmail(), PDO::PARAM_STR);
+        $query->bindValue(':pType', $venta->getPizzaType(), PDO::PARAM_STR);
+        $query->bindValue(':pFlavor', $venta->getPizzaFlavor(), PDO::PARAM_STR);
+        $query->bindValue(':pAmount', $venta->getPizzaAmount(), PDO::PARAM_INT);
+        $query->bindValue(':vID', $id, PDO::PARAM_INT);
+        $query->execute();
+        return $query->rowCount();
+    }
+
+    /**
+     * Gets and specific Sale bassed on it's id.
+     * @param DataAccess $DAO The Data Access Object.
+     * @param int $id The id of the Sale to search for.
+     * @return Venta A Venta class if exist, null otherwise.
+     */
+    public static function getVentaByID($DAO, $id){
+        $query = $DAO->getQuery("SELECT 
+        fecha AS _date,
+        correo_usuario AS _userEmail,
+        sabor_pizza AS _pizzaFlavor,
+        tipo_pizza AS _pizzaType,
+        cantidad_pizza AS _pizzaAmount
+        FROM venta
+        WHERE numero_pedido = :id;");
+        $query->bindValue(':id', $id, PDO::PARAM_INT);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_CLASS, "Venta");
+    }
+
+    /**
+     * Deletes a register of Venta bassed on it's id.
+     * @param DataAcces $DAO The Data Access Object.
+     * @param int $id ID of the Sale to be deleted.
+     * @return 
+     */
+    public static function deleteVentaByID($DAO, $id){
+        $query = $DAO->getQuery("DELETE FROM venta
+        WHERE numero_pedido = :id;");
+        $query->bindValue(':id', $id, PDO::PARAM_INT);
+        $query->execute();
+        return $query->rowCount();
     }
 
     /**
@@ -276,8 +354,7 @@ class Venta{
         tipo_pizza AS _pizzaType,
         cantidad_pizza AS _pizzaAmount
         FROM venta
-        WHERE correo_usuario = :email
-        ORDER BY _date;");
+        WHERE correo_usuario = :email;");
         $query->bindValue(':email', $user, PDO::PARAM_STR);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_CLASS, "Venta");

@@ -1,65 +1,37 @@
 [
     {
-        "_id": 1,
-        "_sabor": "Napolitana",
-        "_precio": 250,
-        "_tipo": "Piedra",
-        "_cantidad": 175
-    },
-    {
-        "_id": 8,
-        "_sabor": "Muzzarella",
-        "_precio": 149.99,
-        "_tipo": "Molde",
-        "_cantidad": 20
-    },
-    {
-        "_id": 323,
+        "_id": 795,
         "_sabor": "Calabresa",
-        "_precio": 250,
+        "_precio": 399,
         "_tipo": "Piedra",
-        "_cantidad": 120
+        "_cantidad": 1
     },
     {
-        "_id": 626,
-        "_sabor": "Pollo",
+        "_id": 892,
+        "_sabor": "Muzzarella",
         "_precio": 250,
         "_tipo": "Piedra",
-        "_cantidad": 65
+        "_cantidad": 2
     },
     {
-        "_id": 585,
-        "_sabor": "Rucula",
+        "_id": 438,
+        "_sabor": "Morron",
         "_precio": 250,
         "_tipo": "Piedra",
-        "_cantidad": 115
+        "_cantidad": 1
+    },
+    {
+        "_id": 196,
+        "_sabor": "Albahaca",
+        "_precio": 299,
+        "_tipo": "Piedra",
+        "_cantidad": 0
     },
     {
         "_id": 119,
-        "_sabor": "Especial",
-        "_precio": 250,
-        "_tipo": "Molde",
-        "_cantidad": 120
-    },
-    {
-        "_id": 141,
-        "_sabor": "Roquefort",
-        "_precio": 250,
+        "_sabor": "Champignon",
+        "_precio": 350,
         "_tipo": "Piedra",
-        "_cantidad": 10
-    },
-    {
-        "_id": 38,
-        "_sabor": "Anchoas",
-        "_precio": 250,
-        "_tipo": "Piedra",
-        "_cantidad": 115
-    },
-    {
-        "_id": 468,
-        "_sabor": "Especial_UTN",
-        "_precio": 299,
-        "_tipo": "Molde",
-        "_cantidad": 138
+        "_cantidad": 2
     }
 ]

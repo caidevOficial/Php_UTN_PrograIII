@@ -80,7 +80,7 @@ class Pizza{
      * @param int $cantidad The quantity of the pizza.
      */
     public function setCantidad($cantidad){
-        if (!empty($cantidad) && is_numeric($cantidad)){
+        if (isset($cantidad) && is_numeric($cantidad)){
             $this->_cantidad = $cantidad;
         }
     }

@@ -218,6 +218,7 @@ class Pizza{
      * @param string $tipo The type of the pizza.
      */
     public static function SearchFor($array, $sabor, $tipo){
+        $message = "";
         $sTipo = false;
         $sSabor = false;
         foreach ($array as $pizza){
@@ -230,14 +231,16 @@ class Pizza{
         }
 
         if($sTipo && $sSabor){
-            echo 'Si Hay';
+            $message =  'Si Hay';
         }else if($sTipo){
-            echo 'Solo hay de tipo: '.$tipo;
+            $message =  'Solo hay de tipo: '.$tipo.'';
         }else if($sSabor){
-            echo 'Solo hay de sabor: '.$sabor;
+            $message =  'Solo hay de sabor: '.$sabor.'';
         }else{
-            echo 'No hay Pizzas '.$tipo.' ni de sabor '.$sabor.'<br>';
+            $message =  'No hay Pizzas '.$tipo.' ni de sabor '.$sabor.'';
         }
+
+        return $message;
     }
 
     /**

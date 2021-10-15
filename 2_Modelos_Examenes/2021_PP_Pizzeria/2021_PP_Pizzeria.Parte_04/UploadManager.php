@@ -37,7 +37,7 @@ class UploadManager{
      * @param array $array The array with the file information.
      */
     public function __construct($dirToSave, $venta, $array){
-        $this->createDirIfNotExists($dirToSave);
+        self::createDirIfNotExists($dirToSave);
         $this->setDirectoryToSave($dirToSave);
         $this->saveFileIntoDir($venta, $array);
     }
@@ -115,10 +115,21 @@ class UploadManager{
     //--- Methods ---//
 
     /**
+     * Gets the fullpath of the image of an specific sale.
+     * @param Venta $venta Venta class to take the neccessary data.
+     * @return string The fullpath of the image of the Sale as a string.
+     */
+    public static function getSalesImageName($obj){
+        $fullpath = $obj->getPizzaType().'_'.$obj->getPizzaFlavor().'_'
+        .explode('@', $obj->getUserEmail())[0].'_'.$obj->getDate().'.png';
+        return $fullpath;
+    }
+
+    /**
      * If not exists the directory to save the file, it creates it.
      * @param string $dirToSave The directory to save the file.
      */
-    private function createDirIfNotExists($dirToSave){
+    private static function createDirIfNotExists($dirToSave){
         if (!file_exists($dirToSave)) {
             mkdir($dirToSave, 0777, true);
         }
@@ -130,7 +141,7 @@ class UploadManager{
     public function saveFileIntoDir($obj, $array):bool{
         $success = false;
         
-        $newFileNameArray = explode('.', $array['image']['name']);
+        $newFileNameArray = explode('.', $array['Image']['name']);
         try {
             if(get_class($obj) == "Pizza"){
                 $this->setNewFileName($obj->getTipo()."_".$obj->getSabor());
@@ -138,9 +149,10 @@ class UploadManager{
                 $userEmail = explode('@', $obj->getUserEmail())[0];
                 $this->setNewFileName($obj->getPizzaType().'_'.$obj->getPizzaFlavor().'_'.$userEmail.'_'.$obj->getDate());
             }
-            $this->setFileExtension(end($newFileNameArray));
+            //$this->setFileExtension(end($newFileNameArray));
+            $this->setFileExtension('png');
             $this->setPathToSaveImage();
-            if ($this->moveUploadedFile($array['image']['tmp_name'])) {
+            if ($this->moveUploadedFile($array['Image']['tmp_name'])) {
                 $success = true;
             }
         } catch (\Throwable $th) {
@@ -157,6 +169,18 @@ class UploadManager{
      */
     public function moveUploadedFile($tmpFileName){
         return move_uploaded_file($tmpFileName, $this->getPathToSaveImage());
+    }
+
+    /**
+     * Moves an image from a directory to another.
+     * @param string $oldDir The directory where the image is allocated.
+     * @param string $newDir The new directory where the image will be allocate.
+     * @param string $imageName The name of the image to be moved.
+     * @return bool True if can move the image, false otherwise.
+     */
+    public static function moveImageFromTo($oldDir, $newDir, $fileName){
+        self::createDirIfNotExists($newDir);
+        return rename($oldDir.$fileName, $newDir.$fileName);
     }
 }
 

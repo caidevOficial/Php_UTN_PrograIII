@@ -20,7 +20,7 @@
  * @author Facundo Falcone <CaidevOficial> 
 */
 
-//$_DELETE = array();
+$_DELETE = array();
 $method = $_SERVER['REQUEST_METHOD'];
 
 //--- Sets the timezone to use. ---//
@@ -49,6 +49,12 @@ switch ($method) {
                 include '2021_PP_Pizzeria.Parte_04/PizzaCarga.php';
                 break;
             }
+        break;
+    case 'PUT':
+        include '2021_PP_Pizzeria.Parte_04/ModificarVenta.php';
+        break;
+    case 'DELETE':
+        include '2021_PP_Pizzeria.Parte_04/BorrarVenta.php';
         break;
 }
     
