@@ -39,6 +39,8 @@ class Venta{
      * @return date _date
      */
     public function getDate(){
+        $this->_date = str_replace(" ", "__", $this->_date);
+        $this->_date = str_replace(":", "_", $this->_date);
         return $this->_date;
     }
 
@@ -136,7 +138,7 @@ class Venta{
      */
     public static function CreateVenta($vEmail, $pizza){
         $venta = new Venta();
-        $venta->setDate(date("Y-m-d"));
+        $venta->setDate(date('Y-m-d H:i:s'));
         $venta->setUserEmail($vEmail);
         $venta->setPizzaFlavor($pizza->getSabor());
         $venta->setPizzaType($pizza->getTipo());
@@ -154,7 +156,7 @@ class Venta{
     public function insertIntoDB($DAO){
         $sql = "INSERT INTO venta (fecha, correo_usuario, sabor_pizza, tipo_pizza, cantidad_pizza) VALUES (:fecha, :email, :sabor, :tipo, :cantidad);";
         $query = $DAO->getQuery($sql);
-        $query->bindValue(':fecha', $this->getDate(), PDO::PARAM_STR);
+        $query->bindValue(':fecha', $this->_date, PDO::PARAM_STR);
         $query->bindValue(':email', $this->getUserEmail(), PDO::PARAM_STR);
         $query->bindValue(':sabor', $this->getPizzaFlavor(), PDO::PARAM_STR);
         $query->bindValue(':tipo', $this->getPizzaType(), PDO::PARAM_STR);
@@ -171,11 +173,8 @@ class Venta{
     public static function getPizzasSoldAmount($DAO){
         $query = $DAO->getQuery("SELECT SUM(v.cantidad_pizza) AS Pizzas_Vendidas FROM venta AS v");
 		$query->execute();
-        $sum_amount = 0;
-        while($row1 = $query->fetch(PDO::FETCH_ASSOC)) {
-            $sum_amount += $row1['Pizzas_Vendidas'];
-        }
-        echo 'Pizzas Vendidas: <strong>['.$sum_amount.']</strong> unidades.<br>';
+        
+        echo 'Pizzas Vendidas: <strong>['.$query->fetch(PDO::FETCH_ASSOC)['Pizzas_Vendidas'].']</strong> unidades.<br>';
     }
 
     /**
@@ -187,7 +186,7 @@ class Venta{
         echo "<th>[Fecha]</th><th>[Usuario]</th><th>[Sabor]</th><th>[Tipo]</th><th>[Cantidad]</th>";
         foreach($arrayVentas as $venta){
             echo "<tr align='center'>";
-            echo "<td>[".$venta->getDate()."]</td>";
+            echo "<td>[".$venta->_date."]</td>";
             echo "<td>[".$venta->getUserEmail()."]</td>";
             echo "<td>[".$venta->getPizzaFlavor()."]</td>";
             echo "<td>[".$venta->getPizzaType()."]</td>";
@@ -210,7 +209,8 @@ class Venta{
         tipo_pizza AS _pizzaType,
         cantidad_pizza AS _pizzaAmount
         FROM venta
-        WHERE sabor_pizza = :flavor");
+        WHERE sabor_pizza = :flavor
+        ORDER BY _date;");
         $query->bindValue(':flavor', $flavor, PDO::PARAM_STR);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_CLASS, "Venta");
@@ -276,7 +276,8 @@ class Venta{
         tipo_pizza AS _pizzaType,
         cantidad_pizza AS _pizzaAmount
         FROM venta
-        WHERE correo_usuario = :email;");
+        WHERE correo_usuario = :email
+        ORDER BY _date;");
         $query->bindValue(':email', $user, PDO::PARAM_STR);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_CLASS, "Venta");
