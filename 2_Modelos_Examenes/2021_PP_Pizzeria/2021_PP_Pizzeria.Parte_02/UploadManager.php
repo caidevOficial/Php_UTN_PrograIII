@@ -116,13 +116,18 @@ class UploadManager{
     public function saveFileIntoDir($venta, $array):bool{
         $success = false;
         $userEmail = explode('@', $venta->getUserEmail())[0];
-        $newFileNameArray = explode('.', $array['image']['name']);
+        $newFileNameArray = explode('.', $array['Image']['name']);
         try {
-            $this->setNewFileName($venta->getPizzaType().'_'.$venta->getPizzaFlavor().'_'.$userEmail.'_'.$venta->getDate());
-            $this->setFileExtension(end($newFileNameArray));
-            $this->setPathToSaveImage();
-            if ($this->moveUploadedFile($array['image']['tmp_name'])) {
-                $success = true;
+            if(isset($array)){
+                $this->setNewFileName($venta->getPizzaType().'_'.$venta->getPizzaFlavor().'_'.$userEmail.'_'.$venta->getDate());
+                //$this->setFileExtension(end($newFileNameArray));
+                $this->setFileExtension('png');
+                $this->setPathToSaveImage();
+                if ($this->moveUploadedFile($array['Image']['tmp_name'])) {
+                    $success = true;
+                }
+            }else{
+                echo '<h3>Error while loading the image.</h3><br>';
             }
         } catch (\Throwable $th) {
             echo $th->getMessage();

@@ -43,7 +43,7 @@ require_once 'UploadManager.php';
 
         //--- Creates a new instance of the Pizza class. ---//
         $myPizza = new Pizza(null, $pSabor, null, $pTipo, $pCantidad);
-        
+        //$actualDateTime = date('Y-m-d__H_i_s');
         echo '<h1>Pizza a Buscar para vender</h1>';
         var_dump($myPizza);
 
@@ -51,7 +51,9 @@ require_once 'UploadManager.php';
         if(Pizza::UpdateArray($myPizza, "sub")){
             // Agrego a BBDD la venta
             $venta = Venta::CreateVenta($vEmail, $myPizza);
-            $venta->insertIntoDB($daoManager);
+            echo '<h1>Venta a agregar a BBDD</h1><br>';
+            var_dump($venta);
+            echo 'Venta a insertar: '.$venta->insertIntoDB($daoManager).'<br>';
             
             //--- Instance of the class UploadManager. ---//
             $imagesDirectory = "./ImagenesDeLaVenta/";

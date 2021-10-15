@@ -39,6 +39,8 @@ class Venta{
      * @return date _date
      */
     public function getDate(){
+        $this->_date = str_replace(" ", "__", $this->_date);
+        $this->_date = str_replace(":", "_", $this->_date);
         return $this->_date;
     }
 
@@ -134,7 +136,7 @@ class Venta{
      */
     public static function CreateVenta($vEmail, $pizza){
         $venta = new Venta();
-        $venta->setDate(date("Y-m-d"));
+        $venta->setDate(date('Y-m-d H:i:s'));
         $venta->setUserEmail($vEmail);
         $venta->setPizzaFlavor($pizza->getSabor());
         $venta->setPizzaType($pizza->getTipo());
@@ -153,7 +155,7 @@ class Venta{
     public function insertIntoDB($DAO){
         $sql = "INSERT INTO venta (fecha, correo_usuario, sabor_pizza, tipo_pizza, cantidad_pizza) VALUES (:fecha, :email, :sabor, :tipo, :cantidad);";
         $query = $DAO->getQuery($sql);
-        $query->bindValue(':fecha', $this->getDate(), PDO::PARAM_STR);
+        $query->bindValue(':fecha', $this->_date, PDO::PARAM_STR);
         $query->bindValue(':email', $this->getUserEmail(), PDO::PARAM_STR);
         $query->bindValue(':sabor', $this->getPizzaFlavor(), PDO::PARAM_STR);
         $query->bindValue(':tipo', $this->getPizzaType(), PDO::PARAM_STR);
@@ -162,7 +164,6 @@ class Venta{
 
         return $DAO->ReturnLastIDInserted();
     }
-
 }
 
 ?>
