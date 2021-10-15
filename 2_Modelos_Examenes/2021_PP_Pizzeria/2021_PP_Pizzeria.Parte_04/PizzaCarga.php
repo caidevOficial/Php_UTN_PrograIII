@@ -29,7 +29,7 @@ require_once 'UploadManager.php';
     if(isset($_POST['Sabor']) && isset($_POST['Precio']) && 
         isset($_POST['Tipo']) && isset($_POST['Cantidad'])){
         
-            //--- Gets the input of the user. ---//
+        //--- Gets the input of the user. ---//
         $pSabor = $_POST['Sabor'];
         $pPrecio = floatval($_POST['Precio']);
         $pTipo = $_POST['Tipo'];
