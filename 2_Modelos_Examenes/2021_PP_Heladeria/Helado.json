@@ -1,0 +1,18 @@
+[
+    {
+        "_id": 500,
+        "_flavor": "MentaGranizada",
+        "_type": "Agua",
+        "_grossPrice": 50,
+        "_finalPrice": 60.5,
+        "_amount": 125
+    },
+    {
+        "_id": 18561,
+        "_flavor": "Chocolate",
+        "_type": "Crema",
+        "_grossPrice": 50,
+        "_finalPrice": 60.5,
+        "_amount": 25
+    }
+]
