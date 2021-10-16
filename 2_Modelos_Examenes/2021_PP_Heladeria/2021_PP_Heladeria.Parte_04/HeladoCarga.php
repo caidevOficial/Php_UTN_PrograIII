@@ -29,24 +29,36 @@
  */
 
 require_once 'Helado.php';
+require_once 'UploadManager.php';
     
-    if(isset($_GET['Sabor']) && isset($_GET['PrecioBruto']) && 
-        isset($_GET['Tipo']) && isset($_GET['Cantidad'])){
-        $pSabor = $_GET['Sabor'];
-        $pPrecio = floatval($_GET['PrecioBruto']);
-        $pTipo = $_GET['Tipo'];
-        $pCantidad = intval($_GET['Cantidad']);
+    if(isset($_POST['Sabor']) && isset($_POST['Precio']) && 
+        isset($_POST['Tipo']) && isset($_POST['Cantidad'])){
+        
+        //--- Gets the input of the user. ---//
+        $pSabor = $_POST['Sabor'];
+        $pPrecio = floatval($_POST['Precio']);
+        $pTipo = $_POST['Tipo'];
+        $pCantidad = intval($_POST['Cantidad']);
 
         //--- Creates a new instance of the Object. ---//
         $pID = rand(1, 25000);
         $myNewObject = Helado::createIceCream($pID, $pSabor, $pTipo, $pPrecio, $pCantidad);
+        
+        //--- Prints the information of the new product. ---//
         echo '<h3>Producto a Buscar:</h3>'.'<br>';
         Helado::printSingleProductAsTable($myNewObject);
 
-        //--- Adds or update the new product to the array. ---//
-        echo Helado::UpdateFile($myNewObject, "add");
+        //--- Adds or update the new Pizza to the array. ---//
+        if(Helado::UpdateFile($myNewObject, "add")){
+            //--- Instance of the class UploadManager. ---//
+            $imagesDirectory = "./ImagenesDeHelados/";
+            $UpManager = new UploadManager($imagesDirectory, $myNewObject, $_FILES);
+            echo '<h2>Producto Agregado</h2><br>';
+        }else{
+            echo '<h2>Producto No Agregado</h2>';
+        }
         
     }else{
-        echo 'Falta al menos un dato';
+        echo '<h2>Falta al menos un dato</h2><br>';
     }
 ?>

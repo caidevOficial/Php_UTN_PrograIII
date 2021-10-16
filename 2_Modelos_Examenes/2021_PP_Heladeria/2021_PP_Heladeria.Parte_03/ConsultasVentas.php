@@ -29,24 +29,32 @@
  */
 
 require_once 'Helado.php';
+require_once 'Venta.php';
+require_once 'DataAccess.php';
     
-    if(isset($_GET['Sabor']) && isset($_GET['PrecioBruto']) && 
-        isset($_GET['Tipo']) && isset($_GET['Cantidad'])){
-        $pSabor = $_GET['Sabor'];
-        $pPrecio = floatval($_GET['PrecioBruto']);
-        $pTipo = $_GET['Tipo'];
-        $pCantidad = intval($_GET['Cantidad']);
+    //--- Instance of the DataAccess class. ---//
+    $daoManager = DataAccess::GetDAO();
 
-        //--- Creates a new instance of the Object. ---//
-        $pID = rand(1, 25000);
-        $myNewObject = Helado::createIceCream($pID, $pSabor, $pTipo, $pPrecio, $pCantidad);
-        echo '<h3>Producto a Buscar:</h3>'.'<br>';
-        Helado::printSingleProductAsTable($myNewObject);
+    //--- 4 - Query 01 ---//
+    Venta::getSoldAmount($daoManager);
+    echo '<br>';
 
-        //--- Adds or update the new product to the array. ---//
-        echo Helado::UpdateFile($myNewObject, "add");
-        
-    }else{
-        echo 'Falta al menos un dato';
+    //--- 4 - Query 02 ---//
+    if(isset($_POST['Fecha1'] ) && isset($_POST['Fecha2'])){
+        Venta::PrintsAllSalesBetweenDates($daoManager, $_POST['Fecha1'], $_POST['Fecha2']);
+        echo '<br>';
     }
+
+    //--- 4 - Query 03 ---//
+    if(isset($_POST['Usuario'])){
+        Venta::PrintsAllSalesByUser($daoManager, $_POST['Usuario']);
+        echo '<br>';
+    }
+
+    //--- 4 - Query 04 ---//
+    if(isset($_POST['Sabor'])){
+        Venta::PrintsAllSalesByType($daoManager, $_POST['Sabor']);
+        echo '<br>';
+    }
+    
 ?>

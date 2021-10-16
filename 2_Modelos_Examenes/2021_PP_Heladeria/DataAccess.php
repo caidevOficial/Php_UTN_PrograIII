@@ -38,7 +38,7 @@ class DataAccess{
     private function __construct()
     {
         try { 
-                $this->PDOObject = new PDO('mysql:host=localhost;dbname=pizzeria;charset=utf8', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+                $this->PDOObject = new PDO('mysql:host=localhost;dbname=heladeria;charset=utf8', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
                 $this->PDOObject->exec("SET CHARACTER SET utf8");
             } 
         catch (PDOException $e) { 

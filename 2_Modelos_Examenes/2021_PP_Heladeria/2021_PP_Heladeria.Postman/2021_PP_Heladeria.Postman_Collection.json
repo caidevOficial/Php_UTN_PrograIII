@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "9379bd56-5535-4b75-943f-bcdeec8182d8",
+		"name": "Helados",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01_1_Helados.AddIceCream_GET",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php?Cargar=Cargar&Sabor=Chocolate&Tipo=Crema&PrecioBruto=50&Cantidad=25",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php?Cargar=Cargar&Sabor=Kiwi&Tipo=Agua&PrecioBruto=35&Cantidad=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Heladeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Cargar",
+									"value": "Cargar"
+								},
+								{
+									"key": "Sabor",
+									"value": "Kiwi"
+								},
+								{
+									"key": "Tipo",
+									"value": "Agua"
+								},
+								{
+									"key": "PrecioBruto",
+									"value": "35"
+								},
+								{
+									"key": "Cantidad",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "01_2_Helados.Check_POST",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php?Consultas=Consultas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Sabor",
+									"value": "Chocolate",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Crema",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php?Consultas=Consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Heladeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Consultas",
+									"value": "Consultas"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02_1_Helados.AddSale_POST",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Email",
+									"value": "VegitoSSJBlue@DragonBallSuper.com",
+									"type": "text"
+								},
+								{
+									"key": "Sabor",
+									"value": "Kinder",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Crema",
+									"type": "text"
+								},
+								{
+									"key": "Cantidad",
+									"value": "35",
+									"type": "text"
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/Cliente_Pizza/Piedra_Pollo_Vegito_2021-10-07.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php?Venta=Venta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Heladeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Venta",
+									"value": "Venta"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03_1_Helados.CheckQueries_POST",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php?ConsultasVentas=Consultas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Usuario",
+									"value": "GogetaSSJ4@DragonBallHeroes.com",
+									"type": "text"
+								},
+								{
+									"key": "Fecha1",
+									"value": "2021-10-12",
+									"type": "text"
+								},
+								{
+									"key": "Fecha2",
+									"value": "2021-10-16",
+									"type": "text"
+								},
+								{
+									"key": "Sabor",
+									"value": "Marroc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php?ConsultasVentas=Consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Heladeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "ConsultasVentas",
+									"value": "Consultas"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04_1_Helados.AddIceCream_POST",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Sabor",
+									"value": "Marroc",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Crema",
+									"type": "text"
+								},
+								{
+									"key": "Precio",
+									"value": "90",
+									"type": "text"
+								},
+								{
+									"key": "Cantidad",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/Pizzas/helado_marroc.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php?Cargar=Cargar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Heladeria",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Cargar",
+									"value": "Cargar"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04_2_Helados.Modify_PUT",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NroPedido\":11,\r\n    \"Sabor\":\"Marroc\",\r\n    \"Email\":\"GokuSSJG@DragonBallSuper.com\",\r\n    \"Tipo\":\"Crema\",\r\n    \"Cantidad\":50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Heladeria",
+								"index.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04_3_Helados.Delete_DELETE",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NroPedido\":8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/2_Modelos_Examenes/2021_PP_Heladeria/index.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2_Modelos_Examenes",
+								"2021_PP_Heladeria",
+								"index.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

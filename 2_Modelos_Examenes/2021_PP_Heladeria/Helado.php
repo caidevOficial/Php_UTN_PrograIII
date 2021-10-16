@@ -122,9 +122,9 @@ class Helado{
 
     /**
      * Set the type of the ice cream.
-     * @param string $type The type of the ice cream to set ['Crema' or 'Agua'].
+     * @param string $type The type of the ice cream to set ['Crema' or 'Agua']. Default is 'Crema'.
      */
-    public function setType($type){
+    public function setType($type='Crema'){
         if(isset($type) && is_string($type) && ($type == 'Agua' || $type == 'Crema')){
             $this->_type = $type;
         }
@@ -136,7 +136,7 @@ class Helado{
      */
     public function setGrossPrice($grossPrice){
         if(isset($grossPrice) && is_numeric($grossPrice)){
-            $this->_grossPrice = $grossPrice;
+            $this->_grossPrice = abs($grossPrice);
         }
     }
 
@@ -146,7 +146,7 @@ class Helado{
      */
     public function setFinalPrice($finalPrice){
         if(isset($finalPrice) && is_numeric($finalPrice)){
-            $this->_finalPrice = $finalPrice;
+            $this->_finalPrice = round(abs($finalPrice), 2, PHP_ROUND_HALF_EVEN);
         }
     }
 
@@ -200,7 +200,7 @@ class Helado{
     */
     public function __Equals($obj){
         if(isset($obj) && is_a($obj, 'Helado')){
-            if($this->_flavor == $obj->_flavor && $this->_type == $obj->_type){
+            if($this->getFlavor() == $obj->getFlavor() && $this->getType() == $obj->getType()){
                 return true;
             }
         }
@@ -247,20 +247,38 @@ class Helado{
         }
 
         if($both){
-            $message =  'Si Hay<br>';
+            $message =  '<h3>Si Hay</h3><br>';
         }else if($sType || $sFlavor){
-            $message =  'No Hay Esa Combinacion.<br>';
+            $message =  '<h3>No Hay Esa Combinacion.</h3><br>';
             if ($sType) {
-                $message .=  'Hay de tipo: '.$type.'<br>';
+                $message .=  '<h3>Hay de tipo: '.$type.'</h3><br>';
             }
             if ($sFlavor) {
-                $message .=  'Hay de sabor: '.$flavor.'<br>';
+                $message .=  '<h3>Hay de sabor: '.$flavor.'</h3><br>';
             }
         }else{
-            $message =  'No hay de tipo '.$type.' ni de sabor '.$flavor.'<br>';
+            $message =  '<h3>No hay de tipo '.$type.' ni de sabor '.$flavor.'</h3><br>';
         }
 
         return $message;
+    }
+
+    /**
+     * Prints the info of the query as a table.
+     * @param Helado $product Product to show as a table..
+     */
+    public static function printSingleProductAsTable($product){
+        echo "<table>";
+        echo "<th>[ID]</th><th>[Sabor]</th><th>[Tipo]</th><th>[Bruto]</th><th>[Final]</th><th>[Cantidad]</th>";
+        echo "<tr align='center'>";
+        echo "<td>[".$product->getId()."]</td>";
+        echo "<td>[".$product->getFlavor()."]</td>";
+        echo "<td>[".$product->getType()."]</td>";
+        echo "<td>[".$product->getGrossPrice()."]</td>";
+        echo "<td>[".$product->getFinalPrice()."]</td>";
+        echo "<td>[".$product->getAmount()."]</td>";
+        echo "</tr>";
+        echo "</table>" ;
     }
 
     //--- FILE HANDLE METHODS ---//
@@ -326,21 +344,19 @@ class Helado{
      * @param string $action The action to do [add, sub].
      * @return bool True if the file was updated, false otherwise.
      */
-    public static function updateFile($newObject, $action){
+    public static function updateFile($newObject, $action):bool{
         $arrayObjects = self::readJson();
-        echo 'Array levantado: ';
-        var_dump($arrayObjects);
         if (!$newObject->isInArray($arrayObjects)) {
             if ($action == 'add') {
-                echo 'El objeto aun no existe, Agregado.<br>';
+                echo '<h3>El objeto aun no existe, Agregado.</h3><br>';
                 array_push($arrayObjects, $newObject);
                 return self::writeJson($arrayObjects);
             }
         }else{
             foreach ($arrayObjects as $fileObject) {
                 if ($action == 'add') {
-                    echo 'El objeto ya existe en el archivo, Se actualizara.<br>';
                     if ($newObject->__Equals($fileObject)) {
+                        echo '<h3>El objeto ya existe en el archivo, Se actualizara.</h3><br>';
                         $fileObject->setAmount($fileObject->getAmount() + $newObject->getAmount());
                         $fileObject->setGrossPrice($newObject->getGrossPrice());
                         $fileObject->calculateFinalPrice();
@@ -349,7 +365,7 @@ class Helado{
                 } elseif ($action == 'sub') {
                     if ($newObject->__Equals($fileObject) &&
                         $newObject->getAmount() <= $fileObject->getAmount()) {
-                        echo 'Aun hay stock, Se descontaran '.$newObject->getAmount().' unidades<br>';
+                        echo '<h3>Aun hay stock, Se descontaran '.$newObject->getAmount().' unidades</h3><br>';
                         $fileObject->setAmount($fileObject->getAmount() - $newObject->getAmount());
                         return self::writeJson($arrayObjects);
                     }
