@@ -13,6 +13,158 @@
         "_type": "Crema",
         "_grossPrice": 50,
         "_finalPrice": 60.5,
-        "_amount": 25
+        "_amount": 90
+    },
+    {
+        "_id": 6469,
+        "_flavor": "Marroc",
+        "_type": "Crema",
+        "_grossPrice": 55,
+        "_finalPrice": 66.55,
+        "_amount": 87
+    },
+    {
+        "_id": 8769,
+        "_flavor": "Kinder",
+        "_type": "Crema",
+        "_grossPrice": 55,
+        "_finalPrice": 66.55,
+        "_amount": 100
+    },
+    {
+        "_id": 2472,
+        "_flavor": "PicoDulce",
+        "_type": "Crema",
+        "_grossPrice": 55,
+        "_finalPrice": 66.55,
+        "_amount": 100
+    },
+    {
+        "_id": 23519,
+        "_flavor": "Bubaloo",
+        "_type": "Crema",
+        "_grossPrice": 60,
+        "_finalPrice": 72.6,
+        "_amount": 100
+    },
+    {
+        "_id": 5099,
+        "_flavor": "Frutilla",
+        "_type": "Crema",
+        "_grossPrice": 60,
+        "_finalPrice": 72.6,
+        "_amount": 100
+    },
+    {
+        "_id": 13544,
+        "_flavor": "Limon",
+        "_type": "Agua",
+        "_grossPrice": 45,
+        "_finalPrice": 54.45,
+        "_amount": 100
+    },
+    {
+        "_id": 168,
+        "_flavor": "Frutilla",
+        "_type": "Agua",
+        "_grossPrice": 45,
+        "_finalPrice": 54.45,
+        "_amount": 100
+    },
+    {
+        "_id": 7388,
+        "_flavor": "Melon",
+        "_type": "Agua",
+        "_grossPrice": 40,
+        "_finalPrice": 48.4,
+        "_amount": 82
+    },
+    {
+        "_id": 1960,
+        "_flavor": "Melon",
+        "_type": "Crema",
+        "_grossPrice": 56,
+        "_finalPrice": 67.76,
+        "_amount": 100
+    },
+    {
+        "_id": 465,
+        "_flavor": "Baileys",
+        "_type": "Crema",
+        "_grossPrice": 80,
+        "_finalPrice": 96.8,
+        "_amount": 100
+    },
+    {
+        "_id": 24658,
+        "_flavor": "Amarena",
+        "_type": "Crema",
+        "_grossPrice": 80,
+        "_finalPrice": 96.8,
+        "_amount": 100
+    },
+    {
+        "_id": 17387,
+        "_flavor": "Oreo",
+        "_type": "Crema",
+        "_grossPrice": 80,
+        "_finalPrice": 96.8,
+        "_amount": 82
+    },
+    {
+        "_id": 9673,
+        "_flavor": "Mascarpone",
+        "_type": "Crema",
+        "_grossPrice": 80,
+        "_finalPrice": 96.8,
+        "_amount": 100
+    },
+    {
+        "_id": 19149,
+        "_flavor": "Nutella",
+        "_type": "Crema",
+        "_grossPrice": 80,
+        "_finalPrice": 96.8,
+        "_amount": 90
+    },
+    {
+        "_id": 20426,
+        "_flavor": "BananaSplit",
+        "_type": "Crema",
+        "_grossPrice": 80,
+        "_finalPrice": 96.8,
+        "_amount": 100
+    },
+    {
+        "_id": 6320,
+        "_flavor": "Mango",
+        "_type": "Agua",
+        "_grossPrice": 60,
+        "_finalPrice": 72.6,
+        "_amount": 100
+    },
+    {
+        "_id": 11091,
+        "_flavor": "Naranja",
+        "_type": "Agua",
+        "_grossPrice": 35,
+        "_finalPrice": 42.35,
+        "_amount": 100
+    },
+    {
+        "_id": 18088,
+        "_flavor": "Pomelo",
+        "_type": "Agua",
+        "_grossPrice": 35,
+        "_finalPrice": 42.35,
+        "_amount": 100
+    },
+    {
+        "_id": 23863,
+        "_flavor": "Kiwi",
+        "_type": "Agua",
+        "_grossPrice": 35,
+        "_finalPrice": 42.35,
+        "_amount": 87
     }
 ]
