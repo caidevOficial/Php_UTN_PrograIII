@@ -37,18 +37,14 @@ require_once 'Helado.php';
         $pTipo = $_GET['Tipo'];
         $pCantidad = intval($_GET['Cantidad']);
 
-        //--- Creates a new instance of the Pizza class. ---//
+        //--- Creates a new instance of the Object. ---//
         $pID = rand(1, 25000);
-        $myIceCream = Helado::createIceCream($pID, $pSabor, $pTipo, $pPrecio, $pCantidad);
-        echo 'Helado creado: <br>';
-        var_dump($myIceCream);
+        $myNewObject = Helado::createIceCream($pID, $pSabor, $pTipo, $pPrecio, $pCantidad);
+        echo '<h3>Producto a Buscar:</h3>'.'<br>';
+        Helado::printSingleProductAsTable($myNewObject);
 
-
-        echo '<h1>Helado a Buscar</h1>';
-        var_dump($myIceCream);
-
-        //--- Adds or update the new Pizza to the array. ---//
-        echo Helado::UpdateFile($myIceCream, "add");
+        //--- Adds or update the new product to the array. ---//
+        echo Helado::UpdateFile($myNewObject, "add");
         
     }else{
         echo 'Falta al menos un dato';
