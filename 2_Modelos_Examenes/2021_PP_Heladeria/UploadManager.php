@@ -29,13 +29,11 @@ class UploadManager{
     private $_pathToSaveImage;
 
     //--- Constructor ---//
-    public function __construct($dirToSave, $venta, $array)
+    public function __construct($dirToSave, $object, $array)
     {
-        if (!file_exists($dirToSave)) {
-            mkdir($dirToSave, 0777, true);
-        }
+        self::createDirIfNotExists($dirToSave);
         $this->setDirectoryToSave($dirToSave);
-        $this->saveFileIntoDir($venta, $array);
+        $this->saveFileIntoDir($object, $array);
     }
     
     //--- Setters ---//
@@ -50,11 +48,11 @@ class UploadManager{
     }
 
     /**
-     * Set the extension of the actual file to upload.
+     * Set the extension of the actual file to upload. Default is png.
      *
      * @param string $fileExtension The extension of the actual file to upload.
      */
-    public function setFileExtension($fileExtension){
+    public function setFileExtension($fileExtension = 'png'){
         $this->_fileExtension = $fileExtension;
     }
 
@@ -111,23 +109,44 @@ class UploadManager{
     //--- Methods ---//
 
     /**
+     * Gets the fullpath of the image of an specific sale.
+     * @param Venta $venta Venta class to take the neccessary data.
+     * @return string The fullpath of the image of the Sale as a string.
+     */
+    public static function getSalesImageName($obj){
+        $fullpath = $obj->getType().'_'.$obj->getFlavor().'_'
+        .explode('@', $obj->getUserEmail())[0].'_'.$obj->getDate().'.png';
+        return $fullpath;
+    }
+
+    /**
+     * If not exists the directory to save the file, it creates it.
+     * @param string $dirToSave The directory to save the file.
+     */
+    private static function createDirIfNotExists($dirToSave){
+        if (!file_exists($dirToSave)) {
+            mkdir($dirToSave, 0777, true);
+        }
+    }
+
+    /**
      * Save the file into the directory.
      */
-    public function saveFileIntoDir($venta, $array):bool{
+    public function saveFileIntoDir($obj, $array):bool{
         $success = false;
-        $userEmail = explode('@', $venta->getUserEmail())[0];
+        
         $newFileNameArray = explode('.', $array['Image']['name']);
         try {
-            if(isset($array)){
-                $this->setNewFileName($venta->getType().'_'.$venta->getFlavor().'_'.$userEmail.'_'.$venta->getDate());
-                //$this->setFileExtension(end($newFileNameArray));
-                $this->setFileExtension('png');
-                $this->setPathToSaveImage();
-                if ($this->moveUploadedFile($array['Image']['tmp_name'])) {
-                    $success = true;
-                }
+            if(is_a($obj, 'Helado')){
+                $this->setNewFileName($obj->getType()."_".$obj->getFlavor());
             }else{
-                echo '<h3>Error while loading the image.</h3><br>';
+                $userEmail = explode('@', $obj->getUserEmail())[0];
+                $this->setNewFileName($obj->getType().'_'.$obj->getFlavor().'_'.$userEmail.'_'.$obj->getDate());
+            }
+            $this->setFileExtension();
+            $this->setPathToSaveImage();
+            if ($this->moveUploadedFile($array['Image']['tmp_name'])) {
+                $success = true;
             }
         } catch (\Throwable $th) {
             echo $th->getMessage();
@@ -143,6 +162,18 @@ class UploadManager{
      */
     public function moveUploadedFile($tmpFileName){
         return move_uploaded_file($tmpFileName, $this->getPathToSaveImage());
+    }
+
+    /**
+     * Moves an image from a directory to another.
+     * @param string $oldDir The directory where the image is allocated.
+     * @param string $newDir The new directory where the image will be allocate.
+     * @param string $imageName The name of the image to be moved.
+     * @return bool True if can move the image, false otherwise.
+     */
+    public static function moveImageFromTo($oldDir, $newDir, $fileName){
+        self::createDirIfNotExists($newDir);
+        return rename($oldDir.$fileName, $newDir.$fileName);
     }
 }
 

@@ -324,6 +324,65 @@ class Venta{
         echo 'Unidades vendidas a: <strong>['.$user.']</strong>:';
         Venta::printDataAsTable($arrayVentas);
     }
+
+    /**
+     * Updates an specific Sale, bassed on it's id.
+     * @param DataAccess $DAO The Data Access Object.
+     * @param int $id The id of the sale to modify.
+     * @param Venta $venta The new Venta object to take it's data.
+     */
+    public static function updateVentaByID($DAO, $id, $venta){
+        $query = $DAO->getQuery("UPDATE venta
+        SET 
+        usuario = :email,
+        tipo = :pType,
+        sabor = :pFlavor,
+        cantidad = :pAmount
+        WHERE id = :vID;");
+        $query->bindValue(':email', $venta->getUserEmail(), PDO::PARAM_STR);
+        $query->bindValue(':pType', $venta->getType(), PDO::PARAM_STR);
+        $query->bindValue(':pFlavor', $venta->getFlavor(), PDO::PARAM_STR);
+        $query->bindValue(':pAmount', $venta->getAmount(), PDO::PARAM_INT);
+        $query->bindValue(':vID', $id, PDO::PARAM_INT);
+        $query->execute();
+        return $query->rowCount();
+    }
+
+    /**
+     * Gets and specific Sale bassed on it's id.
+     * @param DataAccess $DAO The Data Access Object.
+     * @param int $id The id of the Sale to search for.
+     * @return Venta A Venta class if exist, null otherwise.
+     */
+    public static function getVentaByID($DAO, $id){
+        $query = $DAO->getQuery("SELECT 
+        fecha AS _date,
+        usuario AS _userEmail,
+        sabor AS _flavor,
+        tipo AS _type,
+        cantidad AS _amount
+        FROM venta
+        WHERE id = :id;");
+        $query->bindValue(':id', $id, PDO::PARAM_INT);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_CLASS, "Venta");
+    }
+
+    /**
+     * Deletes a register of Venta bassed on it's id.
+     * @param DataAcces $DAO The Data Access Object.
+     * @param int $id ID of the Sale to be deleted.
+     * @return 
+     */
+    public static function deleteVentaByID($DAO, $id){
+        $query = $DAO->getQuery("DELETE FROM venta
+        WHERE id = :id;");
+        $query->bindValue(':id', $id, PDO::PARAM_INT);
+        $query->execute();
+        return $query->rowCount();
+    }
+
+    
 }
 
 ?>

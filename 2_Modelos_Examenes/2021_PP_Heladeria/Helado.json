@@ -19,9 +19,9 @@
         "_id": 6469,
         "_flavor": "Marroc",
         "_type": "Crema",
-        "_grossPrice": 55,
-        "_finalPrice": 66.55,
-        "_amount": 87
+        "_grossPrice": 90,
+        "_finalPrice": 108.9,
+        "_amount": 150
     },
     {
         "_id": 8769,
@@ -29,7 +29,7 @@
         "_type": "Crema",
         "_grossPrice": 55,
         "_finalPrice": 66.55,
-        "_amount": 100
+        "_amount": 65
     },
     {
         "_id": 2472,

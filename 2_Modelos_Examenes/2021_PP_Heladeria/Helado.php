@@ -269,10 +269,13 @@ class Helado{
      */
     public static function printSingleProductAsTable($product){
         echo "<table>";
-        echo "<th>[Sabor]</th><th>[Tipo]</th><th>[Cantidad]</th>";
+        echo "<th>[ID]</th><th>[Sabor]</th><th>[Tipo]</th><th>[Bruto]</th><th>[Final]</th><th>[Cantidad]</th>";
         echo "<tr align='center'>";
+        echo "<td>[".$product->getId()."]</td>";
         echo "<td>[".$product->getFlavor()."]</td>";
         echo "<td>[".$product->getType()."]</td>";
+        echo "<td>[".$product->getGrossPrice()."]</td>";
+        echo "<td>[".$product->getFinalPrice()."]</td>";
         echo "<td>[".$product->getAmount()."]</td>";
         echo "</tr>";
         echo "</table>" ;
@@ -352,8 +355,8 @@ class Helado{
         }else{
             foreach ($arrayObjects as $fileObject) {
                 if ($action == 'add') {
-                    echo '<h3>El objeto ya existe en el archivo, Se actualizara.</h3><br>';
                     if ($newObject->__Equals($fileObject)) {
+                        echo '<h3>El objeto ya existe en el archivo, Se actualizara.</h3><br>';
                         $fileObject->setAmount($fileObject->getAmount() + $newObject->getAmount());
                         $fileObject->setGrossPrice($newObject->getGrossPrice());
                         $fileObject->calculateFinalPrice();
