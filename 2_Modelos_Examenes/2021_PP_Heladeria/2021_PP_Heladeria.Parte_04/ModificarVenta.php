@@ -36,7 +36,8 @@ require_once 'UploadManager.php';
 
     //--- Instance of the DataAccess class. ---//
     $daoManager = DataAccess::GetDAO();
-    
+    $imagesDirectory = "./ImagenesDeLaVenta/";
+
     if(isset($body['Sabor']) && isset($body['Email']) && 
     isset($body['Tipo']) && isset($body['Cantidad']) && 
     isset($body['NroPedido'])){
@@ -44,6 +45,9 @@ require_once 'UploadManager.php';
         $salesToModify = Venta::getVentaByID($daoManager, intval($body['NroPedido']));
         echo "<h3>Venta a modificar: </h3>";
         Venta::printSingleSaleAsTable($salesToModify[0]);
+        //--- Original image name ---//
+        $originalImageName = $imagesDirectory.UploadManager::getSalesImageName($salesToModify[0]);
+
         if(isset($salesToModify[0])){
             
             //--- Sets new values on the Venta object. ---//
@@ -57,6 +61,9 @@ require_once 'UploadManager.php';
                 echo "<h3>Venta modificada: </h3>";
                 $saleModified = Venta::getVentaByID($daoManager, intval($body['NroPedido']));
                 Venta::printSingleSaleAsTable($saleModified[0]);
+                //--- Rename the image according the new data of the sale modified ---//
+                $newImageName = $imagesDirectory.UploadManager::getSalesImageName($saleModified[0]);
+                rename($originalImageName, $newImageName);
             }else{
                 echo "<h3>Error al modificar la venta, chequea bien los datos.</h3>";
             }
