@@ -1,0 +1,23 @@
+[
+    {
+        "_id": 17758,
+        "_flavor": "Napolitana",
+        "_type": "Piedra",
+        "_price": 299,
+        "_amount": 13
+    },
+    {
+        "_id": 6126,
+        "_flavor": "Champignon",
+        "_type": "Piedra",
+        "_price": 350,
+        "_amount": 90
+    },
+    {
+        "_id": 12764,
+        "_flavor": "Albahaca",
+        "_type": "Piedra",
+        "_price": 250,
+        "_amount": 93
+    }
+]

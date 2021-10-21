@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "71f88a10-7b78-4522-ba13-3584a47d9fa1",
+		"name": "Pizzeria_V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AltaProducto_POST",
+			"item": [
+				{
+					"name": "http://localhost/2_Modelos_Examenes/2021_PP_Producto/AltaProducto.php",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Sabor",
+									"value": "Albahaca",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Piedra",
+									"type": "text"
+								},
+								{
+									"key": "Cantidad",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "Precio",
+									"value": "250",
+									"type": "text"
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/Pizzas/04.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2021_PP_Progra3/index.php?Cargar=cargar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2021_PP_Progra3",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Cargar",
+									"value": "cargar"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ConsultaProducto_POST",
+			"item": [
+				{
+					"name": "http://localhost/2021_PP_Progra3/index.php",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Sabor",
+									"value": "Calabresa",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Piedra",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2021_PP_Progra3/index.php?Consultas=Consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2021_PP_Progra3",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Consultas",
+									"value": "Consultas"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AltaVenta_POST",
+			"item": [
+				{
+					"name": "http://localhost/2021_PP_Progra3/index.php?Venta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Sabor",
+									"value": "Albahaca",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Piedra",
+									"type": "text"
+								},
+								{
+									"key": "Cantidad",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "GogetaSSJ4@DragonBallHeroes.com",
+									"type": "text"
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/Cliente_Pizza/Piedra_Pollo_GogetaSSJ4_2021-10-08.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2021_PP_Progra3/index.php?Venta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2021_PP_Progra3",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Venta",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ConsultasVentas_POST",
+			"item": [
+				{
+					"name": "http://localhost/2021_PP_Progra3/index.php?ConsultasVentas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Sabor",
+									"value": "Napolitana",
+									"type": "text"
+								},
+								{
+									"key": "Fecha1",
+									"value": "2021-10-17",
+									"type": "text"
+								},
+								{
+									"key": "Fecha2",
+									"value": "2021-10-19",
+									"type": "text"
+								},
+								{
+									"key": "DiaVenta",
+									"value": "2021-10-18",
+									"type": "text"
+								},
+								{
+									"key": "Usuario",
+									"value": "GokuSSJG@DBS.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2021_PP_Progra3/index.php?ConsultasVentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2021_PP_Progra3",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "ConsultasVentas",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ModificarVenta_PUT",
+			"item": [
+				{
+					"name": "http://localhost/2021_PP_Progra3/index.php",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NroPedido\":14,\r\n    \"Sabor\":\"Calabresa\",\r\n    \"Tipo\":\"Piedra\",\r\n    \"Email\":\"GokuSSJG@DBS.com\",\r\n    \"Cantidad\":50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/2021_PP_Progra3/index.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2021_PP_Progra3",
+								"index.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BorrarVenta_DELETE",
+			"item": [
+				{
+					"name": "http://localhost/2021_PP_Progra3/index.php",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NroPedido\":27\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/2021_PP_Progra3/index.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2021_PP_Progra3",
+								"index.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GenerarQueja_POST",
+			"item": [
+				{
+					"name": "http://localhost/2021_PP_Progra3/index.php?Devolucion=Devolucion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "NroPedido",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "Causa",
+									"value": "Mal sabor",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2021_PP_Progra3/index.php?Devolucion=Devolucion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2021_PP_Progra3",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "Devolucion",
+									"value": "Devolucion"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AltaVentaCupon_POST",
+			"item": [
+				{
+					"name": "http://localhost/2021_PP_Progra3/index.php?VentaCupon=VentaCupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Sabor",
+									"value": "Champignon",
+									"type": "text"
+								},
+								{
+									"key": "Tipo",
+									"value": "Piedra",
+									"type": "text"
+								},
+								{
+									"key": "Cantidad",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/Cliente_Pizza/Piedra_Pollo_GogetaSSJ4_2021-10-08.jpg"
+								},
+								{
+									"key": "Email",
+									"value": "GogetaSSJ4@DragonBallHeroes.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2021_PP_Progra3/index.php?VentaCupon=VentaCupon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2021_PP_Progra3",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "VentaCupon",
+									"value": "VentaCupon"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ConsultaDevoluciones_POST",
+			"item": [
+				{
+					"name": "http://localhost/2021_PP_Progra3/index.php?ConsultasDevoluciones=ConsultasDevoluciones",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Cupones",
+									"value": "Cupones",
+									"type": "text"
+								},
+								{
+									"key": "Devolucion_con_Cupones",
+									"value": "Devolucion y Cupones Completo",
+									"type": "text"
+								},
+								{
+									"key": "Devoluciones",
+									"value": "Devoluciones",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/2021_PP_Progra3/index.php?ConsultasDevoluciones=ConsultasDevoluciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"2021_PP_Progra3",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "ConsultasDevoluciones",
+									"value": "ConsultasDevoluciones"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

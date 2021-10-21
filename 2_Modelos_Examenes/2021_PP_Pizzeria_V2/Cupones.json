@@ -1,0 +1,37 @@
+[
+    {
+        "_idCoupon": 16,
+        "_user": "GokuSSJG@DBS.com",
+        "_isUsed": false,
+        "_discount": 10,
+        "_priceFinal": 0
+    },
+    {
+        "_idCoupon": 18,
+        "_user": "Rafiki@mail.com",
+        "_isUsed": false,
+        "_discount": 10,
+        "_priceFinal": 0
+    },
+    {
+        "_idCoupon": 27,
+        "_user": "GogetaSSJ4@DragonBallHeroes.com",
+        "_isUsed": true,
+        "_discount": 10,
+        "_priceFinal": 3150
+    },
+    {
+        "_idCoupon": 26,
+        "_user": "Rafiki@mail.com",
+        "_isUsed": false,
+        "_discount": 10,
+        "_priceFinal": 0
+    },
+    {
+        "_idCoupon": 25,
+        "_user": "Rafiki@mail.com",
+        "_isUsed": false,
+        "_discount": 10,
+        "_priceFinal": 0
+    }
+]
