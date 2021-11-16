@@ -1,0 +1,12 @@
+[
+    {
+        "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTczNjIsImV4cCI6MTYzNzE2NzM2MiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjgsInVzZXJuYW1lIjoiRmFjdW5kbyIsInBhc3N3b3JkIjoiJDJ5JDEwJFZiZnAzdUZySGZXcVBnRVFmWDFha3U2OEJcLzZTRUdzVEFoY1BuQWpTXC9HRVp6Qi5TWmVlYUsiLCJ0eXBlIjoiQWRtaW4ifSwiYXBwIjoiVGVzdCBKV1QifQ.oR3HSgvDGUQlwYScOFWctO8S_E2eFOsWjLmV23Q8uOE",
+        "response": "OK",
+        "UserType": "Admin"
+    },
+    {
+        "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTUyMDYsImV4cCI6MTYzNzE2NTIwNiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjksInVzZXJuYW1lIjoiRnVsYW5vIiwicGFzc3dvcmQiOiIkMnkkMTAkVzNmRmw3XC82bjJqaXVIUDBVYlpoN3VVSEwyN2pvcFc3N3dwNC45aTh6WFNuNHBBQURYelVHIiwidHlwZSI6IkN1c3RvbWVyIn0sImFwcCI6IlRlc3QgSldUIn0.ZHL-yp6NYAYjnII9f2S3jTbN7uPJKvh6-UN5umvJcEk",
+        "response": "OK",
+        "UserType": "Customer"
+    }
+]

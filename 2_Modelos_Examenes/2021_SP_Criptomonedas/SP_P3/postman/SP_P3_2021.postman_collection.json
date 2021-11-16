@@ -1,0 +1,800 @@
+{
+	"info": {
+		"_postman_id": "de955db2-4c18-42ec-8063-7e13e586271b",
+		"name": "SP_P3_2021",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "00 - Register_User",
+			"item": [
+				{
+					"name": "Register_User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Fulano",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Fulano",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Customer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"user",
+								"register"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "01 - Verify_User",
+			"item": [
+				{
+					"name": "Verify_User_And_Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Facundo",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02 - Add_Crypto",
+			"item": [
+				{
+					"name": "Agregar Crypto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTI3NDgsImV4cCI6MTYzNzE2Mjc0OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEyLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRxTUxJd3daa2s5c0tURXdGT1lhT1kuSmJ6TjZ0ckg2V0FoMFBhTlR0WW5reGdxanByTEVSSyIsInR5cGUiOiJBZG1pbiJ9LCJhcHAiOiJUZXN0IEpXVCJ9.XazJGkJftIv1h48YgAs69vJzDOXWRL_DtS7AskGVHsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/tether_coin.png"
+								},
+								{
+									"key": "name",
+									"value": "CryptoFalsa",
+									"type": "text"
+								},
+								{
+									"key": "origin",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/cryptocurrency/newCrypto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"cryptocurrency",
+								"newCrypto"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03 - List_Crypto",
+			"item": [
+				{
+					"name": "Listar Todas Cryptos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/cryptocurrency/getAll/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"cryptocurrency",
+								"getAll",
+								""
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04 - List_CryptoByCountry",
+			"item": [
+				{
+					"name": "Cryptos Por Pais",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/tether_coin.png"
+								},
+								{
+									"key": "name",
+									"value": "Tether",
+									"type": "text"
+								},
+								{
+									"key": "origin",
+									"value": "Europe",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "140",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/cryptocurrency/getAll/Argentina",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"cryptocurrency",
+								"getAll",
+								"Argentina"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "05 - Get_CyptoById",
+			"item": [
+				{
+					"name": "Crypto Por Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTI3NDgsImV4cCI6MTYzNzE2Mjc0OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEyLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRxTUxJd3daa2s5c0tURXdGT1lhT1kuSmJ6TjZ0ckg2V0FoMFBhTlR0WW5reGdxanByTEVSSyIsInR5cGUiOiJBZG1pbiJ9LCJhcHAiOiJUZXN0IEpXVCJ9.XazJGkJftIv1h48YgAs69vJzDOXWRL_DtS7AskGVHsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/tether_coin.png"
+								},
+								{
+									"key": "name",
+									"value": "Tether",
+									"type": "text"
+								},
+								{
+									"key": "origin",
+									"value": "Europe",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "140",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/cryptocurrency/getCrypto/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"cryptocurrency",
+								"getCrypto",
+								"6"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "06 - Add_Sale",
+			"item": [
+				{
+					"name": "Agregar Venta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTUyMDYsImV4cCI6MTYzNzE2NTIwNiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjksInVzZXJuYW1lIjoiRnVsYW5vIiwicGFzc3dvcmQiOiIkMnkkMTAkVzNmRmw3XC82bjJqaXVIUDBVYlpoN3VVSEwyN2pvcFc3N3dwNC45aTh6WFNuNHBBQURYelVHIiwidHlwZSI6IkN1c3RvbWVyIn0sImFwcCI6IlRlc3QgSldUIn0.ZHL-yp6NYAYjnII9f2S3jTbN7uPJKvh6-UN5umvJcEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/tether_coin.png"
+								},
+								{
+									"key": "crypto_name",
+									"value": "ReichCoin",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "150",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "Facundo",
+									"type": "text"
+								},
+								{
+									"key": "customer",
+									"value": "AFF",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/sale/newSale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"sale",
+								"newSale"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "07 - List_CryptoByCountryDate",
+			"item": [
+				{
+					"name": "Get Crypto Por Pais y Fechas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTI3NDgsImV4cCI6MTYzNzE2Mjc0OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEyLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRxTUxJd3daa2s5c0tURXdGT1lhT1kuSmJ6TjZ0ckg2V0FoMFBhTlR0WW5reGdxanByTEVSSyIsInR5cGUiOiJBZG1pbiJ9LCJhcHAiOiJUZXN0IEpXVCJ9.XazJGkJftIv1h48YgAs69vJzDOXWRL_DtS7AskGVHsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Facu/Desktop/tether_coin.png"
+								},
+								{
+									"key": "name",
+									"value": "Tether",
+									"type": "text"
+								},
+								{
+									"key": "origin",
+									"value": "Europe",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "140",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/sale/getAll/Alemania/2021-06-10/2021-06-13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"sale",
+								"getAll",
+								"Alemania",
+								"2021-06-10",
+								"2021-06-13"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "08 - List_ByCryptoName",
+			"item": [
+				{
+					"name": "Get Crypto By Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTI3NDgsImV4cCI6MTYzNzE2Mjc0OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEyLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRxTUxJd3daa2s5c0tURXdGT1lhT1kuSmJ6TjZ0ckg2V0FoMFBhTlR0WW5reGdxanByTEVSSyIsInR5cGUiOiJBZG1pbiJ9LCJhcHAiOiJUZXN0IEpXVCJ9.XazJGkJftIv1h48YgAs69vJzDOXWRL_DtS7AskGVHsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/sale/getAllBy/ReichCoin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"sale",
+								"getAllBy",
+								"ReichCoin"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "09 - Delete_CryptoById",
+			"item": [
+				{
+					"name": "Delete Crypto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTczNjIsImV4cCI6MTYzNzE2NzM2MiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjgsInVzZXJuYW1lIjoiRmFjdW5kbyIsInBhc3N3b3JkIjoiJDJ5JDEwJFZiZnAzdUZySGZXcVBnRVFmWDFha3U2OEJcLzZTRUdzVEFoY1BuQWpTXC9HRVp6Qi5TWmVlYUsiLCJ0eXBlIjoiQWRtaW4ifSwiYXBwIjoiVGVzdCBKV1QifQ.oR3HSgvDGUQlwYScOFWctO8S_E2eFOsWjLmV23Q8uOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "11",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/cryptocurrency/deleteCrypto/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"cryptocurrency",
+								"deleteCrypto",
+								"11"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "10 - Modify_Crypto",
+			"item": [
+				{
+					"name": "Modificar Crypto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTczNjIsImV4cCI6MTYzNzE2NzM2MiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjgsInVzZXJuYW1lIjoiRmFjdW5kbyIsInBhc3N3b3JkIjoiJDJ5JDEwJFZiZnAzdUZySGZXcVBnRVFmWDFha3U2OEJcLzZTRUdzVEFoY1BuQWpTXC9HRVp6Qi5TWmVlYUsiLCJ0eXBlIjoiQWRtaW4ifSwiYXBwIjoiVGVzdCBKV1QifQ.oR3HSgvDGUQlwYScOFWctO8S_E2eFOsWjLmV23Q8uOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ether",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "Image.png",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "150",
+									"type": "text"
+								},
+								{
+									"key": "origin",
+									"value": "LaSalada",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/cryptocurrency/modifyCrypto/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"cryptocurrency",
+								"modifyCrypto",
+								"10"
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "11 - Create_Report",
+			"item": [
+				{
+					"name": "Create_pdf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzcwMTczNjIsImV4cCI6MTYzNzE2NzM2MiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjgsInVzZXJuYW1lIjoiRmFjdW5kbyIsInBhc3N3b3JkIjoiJDJ5JDEwJFZiZnAzdUZySGZXcVBnRVFmWDFha3U2OEJcLzZTRUdzVEFoY1BuQWpTXC9HRVp6Qi5TWmVlYUsiLCJ0eXBlIjoiQWRtaW4ifSwiYXBwIjoiVGVzdCBKV1QifQ.oR3HSgvDGUQlwYScOFWctO8S_E2eFOsWjLmV23Q8uOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:666/SP_P3/sales/createReports/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"SP_P3",
+								"sales",
+								"createReports",
+								""
+							],
+							"query": [
+								{
+									"key": "loadTables",
+									"value": "loadTables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
