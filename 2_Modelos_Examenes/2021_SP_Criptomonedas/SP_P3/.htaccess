@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]
+RewriteEngine on  
+RewriteCond %{ENV:REDIRECT_STATUS} !200 RewriteRule
+^api/(.*)$ api/index.php/$1
+RewriteRule ^ /SP_ProgIII/index.php [QSA,L]
