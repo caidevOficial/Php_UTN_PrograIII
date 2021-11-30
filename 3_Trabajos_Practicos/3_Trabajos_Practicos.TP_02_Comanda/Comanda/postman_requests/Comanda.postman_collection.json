@@ -1,0 +1,1331 @@
+{
+	"info": {
+		"_postman_id": "ef0c44c8-363a-47bb-a9b2-a2ead43801be",
+		"name": "Comanda_Localhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "02 - Circuito",
+			"item": [
+				{
+					"name": "01 - Login_Users",
+					"item": [
+						{
+							"name": "All_Employees",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "Bar5",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"login"
+									],
+									"query": [
+										{
+											"key": "loadTables",
+											"value": "loadTables",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "02 - Add_User",
+					"item": [
+						{
+							"name": "Admin_Only",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "Bar5",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										},
+										{
+											"key": "isAdmin",
+											"value": "False",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Active",
+											"type": "text"
+										},
+										{
+											"key": "user_type",
+											"value": "Barman",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"users"
+									],
+									"query": [
+										{
+											"key": "loadTables",
+											"value": "loadTables",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "03 - List_Users",
+					"item": [
+						{
+							"name": "Admin_Only",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "04 - Add_Employee",
+					"item": [
+						{
+							"name": "Admin_Only",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "Name",
+											"value": "Hades",
+											"type": "text"
+										},
+										{
+											"key": "Area",
+											"value": "Barra",
+											"type": "text"
+										},
+										{
+											"key": "User",
+											"value": "Bar4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/employees",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "loadTables",
+											"value": "loadTables",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "05 - List_Employees",
+					"item": [
+						{
+							"name": "Admin_Only",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/employees/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"employees",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "06 - List_Tables",
+					"item": [
+						{
+							"name": "List_Tables",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTA4MDQsImV4cCI6MjE2MzU5MDgwNCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE1LCJ1c2VybmFtZSI6IkMxIiwicGFzc3dvcmQiOiIkMnkkMTAkM2JHM3VBdTJBSjdWbk1jTTA4SUJjdTNrTGVoZzl0NllqV0JBUVwvajZGZUxSN1ZnTXpPV04yIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ2FtYXJlcmEifSwiYXBwIjoiVGVzdCBKV1QifQ.qCOBQr0Qvq1XKZrydCPJCX9K7FpFOEqJ4tkA4mM51C0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/table",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"table"
+									],
+									"query": [
+										{
+											"key": "loadTables",
+											"value": "loadTables",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "07 - Open_Table",
+					"item": [
+						{
+							"name": "Update_Table",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTA4MDQsImV4cCI6MjE2MzU5MDgwNCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE1LCJ1c2VybmFtZSI6IkMxIiwicGFzc3dvcmQiOiIkMnkkMTAkM2JHM3VBdTJBSjdWbk1jTTA4SUJjdTNrTGVoZzl0NllqV0JBUVwvajZGZUxSN1ZnTXpPV04yIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ2FtYXJlcmEifSwiYXBwIjoiVGVzdCBKV1QifQ.qCOBQr0Qvq1XKZrydCPJCX9K7FpFOEqJ4tkA4mM51C0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "EmployeeId",
+											"value": "13",
+											"type": "text"
+										},
+										{
+											"key": "Status",
+											"value": "Con Cliente Esperando Pedido",
+											"type": "text"
+										},
+										{
+											"key": "table_id",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/table/modify",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"table",
+										"modify"
+									],
+									"query": [
+										{
+											"key": "loadTables",
+											"value": "loadTables",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "08 - Add_Order",
+					"item": [
+						{
+							"name": "Admin_&_Waitress",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTA4MDQsImV4cCI6MjE2MzU5MDgwNCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE1LCJ1c2VybmFtZSI6IkMxIiwicGFzc3dvcmQiOiIkMnkkMTAkM2JHM3VBdTJBSjdWbk1jTTA4SUJjdTNrTGVoZzl0NllqV0JBUVwvajZGZUxSN1ZnTXpPV04yIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ2FtYXJlcmEifSwiYXBwIjoiVGVzdCBKV1QifQ.qCOBQr0Qvq1XKZrydCPJCX9K7FpFOEqJ4tkA4mM51C0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "table_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "order_status",
+											"value": "Pendiente",
+											"type": "text"
+										},
+										{
+											"key": "order_picture",
+											"type": "file",
+											"src": "/C:/Users/Facu/Pictures/6514_Simba_Glee.png"
+										},
+										{
+											"key": "order_cost",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "customer",
+											"value": "Fulano_06",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/order/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"order",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "09 - Add_Dish",
+					"item": [
+						{
+							"name": "Admin_&_Waitress",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTA4MDQsImV4cCI6MjE2MzU5MDgwNCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE1LCJ1c2VybmFtZSI6IkMxIiwicGFzc3dvcmQiOiIkMnkkMTAkM2JHM3VBdTJBSjdWbk1jTTA4SUJjdTNrTGVoZzl0NllqV0JBUVwvajZGZUxSN1ZnTXpPV04yIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ2FtYXJlcmEifSwiYXBwIjoiVGVzdCBKV1QifQ.qCOBQr0Qvq1XKZrydCPJCX9K7FpFOEqJ4tkA4mM51C0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "Area",
+											"value": "Barra",
+											"type": "text"
+										},
+										{
+											"key": "Order_Associated",
+											"value": "13",
+											"type": "text"
+										},
+										{
+											"key": "Cost",
+											"value": "350",
+											"type": "text"
+										},
+										{
+											"key": "Description",
+											"value": "Pinta Patagonia 24.7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/dish",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"dish"
+									],
+									"query": [
+										{
+											"key": "loadTables",
+											"value": "loadTables",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "10 - List_Dishes",
+					"item": [
+						{
+							"name": "Admin_&_Barman",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM1NzYsImV4cCI6MjE2MzU5MzU3NiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjIxLCJ1c2VybmFtZSI6IkJhcjEiLCJwYXNzd29yZCI6IiQyeSQxMCRcL2p2QmVIY0JzSlhpVnFubzI1ZUF4LmtlUGVrdlJRcnFEalRPbVk4WWQzdzhydzNNQ2NYc3EiLCJpc0FkbWluIjowLCJVc2VyX1R5cGUiOiJCYXJtYW4ifSwiYXBwIjoiVGVzdCBKV1QifQ.Y-gHTKohEu4PB0qolsLOe9bZGWCEMFAwbecFuvg6jfY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/dish",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"dish"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin_&_Cheff",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM2MTUsImV4cCI6MjE2MzU5MzYxNSwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE4LCJ1c2VybmFtZSI6IkNvMSIsInBhc3N3b3JkIjoiJDJ5JDEwJENuU2pGLjBTRjJGSFloeFhLempyc3VaYldaelM0Q3JRLmtpbjFHaGdEcEhtaURYdi5rWlFPIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ29jaW5lcm8ifSwiYXBwIjoiVGVzdCBKV1QifQ.I-f2OCJByLLaaDK4F93pyimFXm2pM2J9M8rY2FDRs7I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/dish",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"dish"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "11 - Update_Dishes_Preparacion",
+					"item": [
+						{
+							"name": "Admin_&_Barman",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM1NzYsImV4cCI6MjE2MzU5MzU3NiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjIxLCJ1c2VybmFtZSI6IkJhcjEiLCJwYXNzd29yZCI6IiQyeSQxMCRcL2p2QmVIY0JzSlhpVnFubzI1ZUF4LmtlUGVrdlJRcnFEalRPbVk4WWQzdzhydzNNQ2NYc3EiLCJpc0FkbWluIjowLCJVc2VyX1R5cGUiOiJCYXJtYW4ifSwiYXBwIjoiVGVzdCBKV1QifQ.Y-gHTKohEu4PB0qolsLOe9bZGWCEMFAwbecFuvg6jfY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "En Preparacion",
+											"type": "text"
+										},
+										{
+											"key": "time_to_finish",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "id_dish",
+											"value": "26",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/dish/modify",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"dish",
+										"modify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin_&_Cheff",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM2MTUsImV4cCI6MjE2MzU5MzYxNSwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE4LCJ1c2VybmFtZSI6IkNvMSIsInBhc3N3b3JkIjoiJDJ5JDEwJENuU2pGLjBTRjJGSFloeFhLempyc3VaYldaelM0Q3JRLmtpbjFHaGdEcEhtaURYdi5rWlFPIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ29jaW5lcm8ifSwiYXBwIjoiVGVzdCBKV1QifQ.I-f2OCJByLLaaDK4F93pyimFXm2pM2J9M8rY2FDRs7I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "En Preparacion",
+											"type": "text"
+										},
+										{
+											"key": "time_to_finish",
+											"value": "25",
+											"type": "text"
+										},
+										{
+											"key": "id_dish",
+											"value": "25",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/dish/modify",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"dish",
+										"modify"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "12 - List_Order_By_Table",
+					"item": [
+						{
+							"name": "List_Waiting_Time_Of_Order",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/customer/table/ME005/13/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"customer",
+										"table",
+										"ME005",
+										"13",
+										""
+									],
+									"query": [
+										{
+											"key": "loadTables",
+											"value": "loadTables",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "13 - Update_Dishes_Listo",
+					"item": [
+						{
+							"name": "Admin_&_Barman",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM1NzYsImV4cCI6MjE2MzU5MzU3NiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjIxLCJ1c2VybmFtZSI6IkJhcjEiLCJwYXNzd29yZCI6IiQyeSQxMCRcL2p2QmVIY0JzSlhpVnFubzI1ZUF4LmtlUGVrdlJRcnFEalRPbVk4WWQzdzhydzNNQ2NYc3EiLCJpc0FkbWluIjowLCJVc2VyX1R5cGUiOiJCYXJtYW4ifSwiYXBwIjoiVGVzdCBKV1QifQ.Y-gHTKohEu4PB0qolsLOe9bZGWCEMFAwbecFuvg6jfY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "Listo Para Servir",
+											"type": "text"
+										},
+										{
+											"key": "time_to_finish",
+											"value": "7",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "id_dish",
+											"value": "26",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/dish/modify",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"dish",
+										"modify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin_&_Cheff",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM2MTUsImV4cCI6MjE2MzU5MzYxNSwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE4LCJ1c2VybmFtZSI6IkNvMSIsInBhc3N3b3JkIjoiJDJ5JDEwJENuU2pGLjBTRjJGSFloeFhLempyc3VaYldaelM0Q3JRLmtpbjFHaGdEcEhtaURYdi5rWlFPIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ29jaW5lcm8ifSwiYXBwIjoiVGVzdCBKV1QifQ.I-f2OCJByLLaaDK4F93pyimFXm2pM2J9M8rY2FDRs7I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "Listo Para Servir",
+											"type": "text"
+										},
+										{
+											"key": "time_to_finish",
+											"value": "30",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "id_dish",
+											"value": "25",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/dish/modify",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"dish",
+										"modify"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "14 - List_Order_By_Table Copy",
+					"item": [
+						{
+							"name": "List_Waiting_Time_Of_Order",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/customer/table/ME004/11/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"customer",
+										"table",
+										"ME004",
+										"11",
+										""
+									],
+									"query": [
+										{
+											"key": "loadTables",
+											"value": "loadTables",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "15 - Table_Bill",
+					"item": [
+						{
+							"name": "Admin_&_Waitress",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTA4MDQsImV4cCI6MjE2MzU5MDgwNCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE1LCJ1c2VybmFtZSI6IkMxIiwicGFzc3dvcmQiOiIkMnkkMTAkM2JHM3VBdTJBSjdWbk1jTTA4SUJjdTNrTGVoZzl0NllqV0JBUVwvajZGZUxSN1ZnTXpPV04yIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ2FtYXJlcmEifSwiYXBwIjoiVGVzdCBKV1QifQ.qCOBQr0Qvq1XKZrydCPJCX9K7FpFOEqJ4tkA4mM51C0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "table_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "table_status",
+											"value": "Con Cliente Pagando",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/table/bill",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"table",
+										"bill"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "16 - Close_Tables",
+					"item": [
+						{
+							"name": "Admin_Close_Table",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "table_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "Status",
+											"value": "Cerrada",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/table/closeTable",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"table",
+										"closeTable"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "17 - Create_Poll",
+					"item": [
+						{
+							"name": "Create_Poll",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "order_id",
+											"value": "13",
+											"type": "text"
+										},
+										{
+											"key": "table_score",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "cheff_score",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "waitress_score",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "resto_score",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "comments",
+											"value": "Muy Rica La Patagonia, como siempre!",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/customer/poll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"customer",
+										"poll"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "18 - Admin_List_Order_With_Time",
+					"item": [
+						{
+							"name": "List_Orders",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/order/list/byTime",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"order",
+										"list",
+										"byTime"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "19 - Admin_List_Tables",
+					"item": [
+						{
+							"name": "List_Tables",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/table/admin/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"table",
+										"admin",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "20 - Admin_FileManager",
+					"item": [
+						{
+							"name": "Write_Csv",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/fileManager/write_csv",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"fileManager",
+										"write_csv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read_Csv",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/fileManager/read_csv",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"fileManager",
+										"read_csv"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "21 - Admin_Get_Best_Comments",
+					"item": [
+						{
+							"name": "List_Tables",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "Amount",
+											"value": "4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/Admin/getPolls",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"Admin",
+										"getPolls"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "22 - Admin_Download_PDF",
+					"item": [
+						{
+							"name": "Download_PDF",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "Amount_Polls",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/Comanda/Admin/downloadReports",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"Comanda",
+										"Admin",
+										"downloadReports"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
