@@ -1,0 +1,82 @@
+{
+    "Admins": [
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5ODY2ODgsImV4cCI6MjE2MzU4NjY4OCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjEwLCJ1c2VybmFtZSI6IkZhY3UiLCJwYXNzd29yZCI6IiQyeSQxMCRZQzMzeFZ2bUFEQlVJY3pVbVNTaFkuaGtDQjdwTGg1a3NILkNPVTdsb2kyWmQ0VjhoLjBjeSIsImlzQWRtaW4iOjEsIlVzZXJfVHlwZSI6IkFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.0wb7iIMs5DVqb_Ge0cvngteLo4gQcQwSb38h359fwSk",
+            "response": "Valid_user",
+            "Admin_Status": 1,
+            "User_Type": "Admin"
+        }
+    ],
+    "Camareras": [
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTA4MDQsImV4cCI6MjE2MzU5MDgwNCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE1LCJ1c2VybmFtZSI6IkMxIiwicGFzc3dvcmQiOiIkMnkkMTAkM2JHM3VBdTJBSjdWbk1jTTA4SUJjdTNrTGVoZzl0NllqV0JBUVwvajZGZUxSN1ZnTXpPV04yIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ2FtYXJlcmEifSwiYXBwIjoiVGVzdCBKV1QifQ.qCOBQr0Qvq1XKZrydCPJCX9K7FpFOEqJ4tkA4mM51C0",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Camarera"
+        },
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM1MjQsImV4cCI6MjE2MzU5MzUyNCwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE2LCJ1c2VybmFtZSI6IkMyIiwicGFzc3dvcmQiOiIkMnkkMTAkeVQ3NENDT203aXNCdnUxOVV2cFAudVhDeXkzclRZcUx3NW1OSDRBWWIudUl6b3pYNmhZMy4iLCJpc0FkbWluIjowLCJVc2VyX1R5cGUiOiJDYW1hcmVyYSJ9LCJhcHAiOiJUZXN0IEpXVCJ9.wOwGqL7AmksGpEV3eyMl1HYa68ewVNwFRB0Y9cofA4E",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Camarera"
+        },
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM1NTMsImV4cCI6MjE2MzU5MzU1MywiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE3LCJ1c2VybmFtZSI6IkMzIiwicGFzc3dvcmQiOiIkMnkkMTAkaXppYjNvb0c2MEJWOVZoZlZXRXBudWs2N00zRXpBelwveWJvU2FHbHE0dHZGcmpJS1RGQWwyIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ2FtYXJlcmEifSwiYXBwIjoiVGVzdCBKV1QifQ.dX-46cd2Kver91hUgODesUc1gVypSpNQ-l09KXz_LNI",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Camarera"
+        }
+    ],
+    "Barmans": [
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM1NzYsImV4cCI6MjE2MzU5MzU3NiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjIxLCJ1c2VybmFtZSI6IkJhcjEiLCJwYXNzd29yZCI6IiQyeSQxMCRcL2p2QmVIY0JzSlhpVnFubzI1ZUF4LmtlUGVrdlJRcnFEalRPbVk4WWQzdzhydzNNQ2NYc3EiLCJpc0FkbWluIjowLCJVc2VyX1R5cGUiOiJCYXJtYW4ifSwiYXBwIjoiVGVzdCBKV1QifQ.Y-gHTKohEu4PB0qolsLOe9bZGWCEMFAwbecFuvg6jfY",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Barman"
+        },
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM1OTYsImV4cCI6MjE2MzU5MzU5NiwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjIyLCJ1c2VybmFtZSI6IkJhcjIiLCJwYXNzd29yZCI6IiQyeSQxMCRNOURTMDhWeHMwTVIyT2RqTDFPSXh1WWNEQ09JT2ZmR3pkRGszQUhTM2NtczZ0R0NHUzllTyIsImlzQWRtaW4iOjAsIlVzZXJfVHlwZSI6IkJhcm1hbiJ9LCJhcHAiOiJUZXN0IEpXVCJ9.7rMxQlXUUD4nzi-3pwcUTwSNL7DdlYjkonNY2KHX67k",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Barman"
+        },
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzgxNTc0MTUsImV4cCI6MjE2Mzc1NzQxNSwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjMwLCJ1c2VybmFtZSI6IkJhcjMiLCJwYXNzd29yZCI6IiQyeSQxMCQ2Q1lHVEJEUTZhM21pZ1dXVFlIcXR1TVdJSUY3UDROSGZPQWRkZWFQdkFsaUZIUVVzV2cyYSIsImlzQWRtaW4iOjAsIlVzZXJfVHlwZSI6IkJhcm1hbiJ9LCJhcHAiOiJUZXN0IEpXVCJ9.ii5_z_pOU6i7C8sVwjOZR_u5ynKBakGZNlIxytI4ty0",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Barman"
+        },
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzgxNjQ4OTIsImV4cCI6MjE2Mzc2NDg5MiwiYXVkIjoiZWFiMDdhOGRlMzJjZGNmNGI2N2U2OWY5YTZjMzgyNWJlZGYyODNiYiIsImRhdGEiOnsiaWQiOjMxLCJ1c2VybmFtZSI6IkJhcjQiLCJwYXNzd29yZCI6IiQyeSQxMCRvS2ZQU1lIamRTR1dmWW1RZmNldW9lT2h0UTlKNTI4Nms1cE9pREpNdlRWOUV1M1FwUXQ1cSIsImlzQWRtaW4iOjAsIlVzZXJfVHlwZSI6IkJhcm1hbiJ9LCJhcHAiOiJUZXN0IEpXVCJ9.-i415xZfa5jbpwxP1v8UpndveXHn15owYGmEbm43bls",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Barman"
+        },
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzgxNjQ5MjQsImV4cCI6MjE2Mzc2NDkyNCwiYXVkIjoiZWFiMDdhOGRlMzJjZGNmNGI2N2U2OWY5YTZjMzgyNWJlZGYyODNiYiIsImRhdGEiOnsiaWQiOjMyLCJ1c2VybmFtZSI6IkJhcjUiLCJwYXNzd29yZCI6IiQyeSQxMCQ0MTZidU1MZUdXdE9rSHZaemo1d1hlZXpQY2k4WkJXSFhKb2dDVk5IRmwyVlwvSzcwOEJFRlciLCJpc0FkbWluIjowLCJVc2VyX1R5cGUiOiJCYXJtYW4ifSwiYXBwIjoiVGVzdCBKV1QifQ.iAaD8Ncl0iQJ1D8TCZDN5lNqN8Ge5zNT5QtnAC9QRCk",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Barman"
+        }
+    ],
+    "Cocineros": [
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM2MTUsImV4cCI6MjE2MzU5MzYxNSwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE4LCJ1c2VybmFtZSI6IkNvMSIsInBhc3N3b3JkIjoiJDJ5JDEwJENuU2pGLjBTRjJGSFloeFhLempyc3VaYldaelM0Q3JRLmtpbjFHaGdEcEhtaURYdi5rWlFPIiwiaXNBZG1pbiI6MCwiVXNlcl9UeXBlIjoiQ29jaW5lcm8ifSwiYXBwIjoiVGVzdCBKV1QifQ.I-f2OCJByLLaaDK4F93pyimFXm2pM2J9M8rY2FDRs7I",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Cocinero"
+        },
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM2MjksImV4cCI6MjE2MzU5MzYyOSwiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjE5LCJ1c2VybmFtZSI6IkNvMiIsInBhc3N3b3JkIjoiJDJ5JDEwJFFMcjJna1J5NHJCNnJZa1JUXC9sVXllNFdVdi5pQ2tTcjJCbTRnY0RGcllGMDlSMU1jbEhsLiIsImlzQWRtaW4iOjAsIlVzZXJfVHlwZSI6IkNvY2luZXJvIn0sImFwcCI6IlRlc3QgSldUIn0.avaXSzKAgHpVkWsqLthGLMJ98s5Or_KvokXBeHlNwh0",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Cocinero"
+        },
+        {
+            "Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc5OTM2NDcsImV4cCI6MjE2MzU5MzY0NywiYXVkIjoiMTI3NjVmNjQ4ZDBmOTMyODllNWVkMmE4NTQzYjkxN2RkYTQ4YWM1MyIsImRhdGEiOnsiaWQiOjIwLCJ1c2VybmFtZSI6IkNvMyIsInBhc3N3b3JkIjoiJDJ5JDEwJEp4cG5OZWZmMk16Uk56clhcL0xmb1J1N1VcL0E4R3pVN0NFZHJGM0U4S0NGeVhITmNjbkxEbzIiLCJpc0FkbWluIjowLCJVc2VyX1R5cGUiOiJDb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.5l3c_xNgcBI7AJMgA7DLbZKP5fPycsvuoyW68uKICeo",
+            "response": "Valid_user",
+            "Admin_Status": 0,
+            "User_Type": "Cocinero"
+        }
+    ]
+}

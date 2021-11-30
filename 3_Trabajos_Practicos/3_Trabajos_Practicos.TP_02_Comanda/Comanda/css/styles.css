@@ -1,0 +1,292 @@
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
+* {
+    box-sizing: border-box;
+}
+
+.aside {
+    background-color: #3c3c3c;
+    /*cuadro de la derecha*/
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.cards{
+    background-color: #2e2e2e;
+    color: #29F100;
+    width: 25%;
+    height: 15%;
+    margin-left: 15px;
+    justify-content: space-around;
+    display: -webkit-inline-box;
+    padding: 5px;
+}
+
+.mainText {
+    padding-left: 5%;
+    padding-top: 25%;
+}
+
+.imgBody{
+    background-image: url("../Assets/test_page/main_banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 55vh;
+    width: 100vw;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+body{
+    margin: 0 auto;
+    color: #f0f0f0;
+    background: #2e2e2e;
+    font-family: "Open Sans", sans-serif;
+}
+
+.dark-mode{
+    margin: 0 auto;
+    color: #f0f0f0;
+    background: #2e2e2e;
+    font-family: "Open Sans", sans-serif;
+}
+
+.hidden{
+    display:none;
+}
+
+.header {
+    background-color: rgb(60, 60, 60);
+    color: #ffffff;
+    /*color letra*/
+    padding: 15px;
+}
+
+.nav1{
+    background: transparent;
+    height: 100px;
+    color:#fff;
+}
+
+.nav-container{
+    display: flex;
+    margin: auto;
+    width: 85%;
+    justify-content: space-between;
+    align-items: center;
+    max-width:1000px;
+    height:inherit;
+    overflow: hidden;
+}
+
+.sameLine {
+    justify-content: space-around;
+    display: flex;
+}
+
+.backImage {
+    background-image: url("../media/carBanner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30vh;
+    width: 100vw;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    /* position: fixed;*/
+    background-color: #3c3c3c;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+}
+
+.logo img{ height:80px;}
+
+#dynamicTable {
+    justify-content: center;
+    display: flex;
+}
+
+th {
+    background-color: #a00;
+    color: #fff;
+}
+
+input[type="text"], [type="number"] {
+    width: 25%;
+    background: #fff;
+    color: #555;
+    margin-bottom: 1px;
+    padding: 7px;
+    /* El alto del box */
+    padding-left: 1rem;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 120%;
+    border-radius: 1.5rem;
+    border: 1px solid #ccc;
+}
+
+.menuIcon{
+    display:none;
+    font-size: 24px;
+    padding: 23.5px 20px;
+}
+
+/* Mobile */
+@media screen and (max-width: 500px){
+
+    .menuIcon{
+        display:block;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.aside {
+    background-color: #3c3c3c;
+    /*cuadro de la derecha*/
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+nav .myLinks a{
+    display: inline-block;
+    padding: 5px 0;
+    margin-right: 17px;
+    font-size: 17px;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+  }
+  
+nav .myLinks a:hover{
+  border-bottom: 3px solid #a45514;
+  transition: 0.6s;
+}
+
+#spinnerCont {
+    display: none;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+#mySpinner {
+    position: absolute;
+    top: 30%;
+}
+
+/* Github Ribbon */
+
+.github-fork-ribbon {
+/* The right and left classes determine the side we attach our banner to */
+position: absolute;
+
+/* Add a bit of padding to give some substance outside the "stitching" */
+padding: 2px 0;
+
+/* Set the base colour */
+background-color: #a00;
+
+/* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
+background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+
+/* Add a drop shadow */
+-webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+
+/* Set the font */
+font: 700 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+z-index: 9999;
+pointer-events: auto;
+}
+
+.github-fork-ribbon a,
+.github-fork-ribbon a:hover {
+/* Set the text properties */
+color: #fff;
+text-decoration: none;
+text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+text-align: center;
+
+/* Set the geometry. If you fiddle with these you'll also need
+    to tweak the top and right values in .github-fork-ribbon. */
+width: 200px;
+line-height: 20px;
+
+/* Set the layout properties */
+display: inline-block;
+padding: 2px 0;
+
+/* Add "stitching" effect */
+border-width: 1px 0;
+border-style: dotted;
+border-color: #fff;
+border-color: rgba(255, 255, 255, 0.7);
+}
+
+.github-fork-ribbon-wrapper {
+width: 135px;
+height: 135px;
+position: absolute;
+overflow: hidden;
+top: 0;
+z-index: 9999;
+pointer-events: none;
+}
+
+.github-fork-ribbon-wrapper.right {
+right: 0;
+}
+
+.github-fork-ribbon-wrapper.right .github-fork-ribbon {
+top: 42px;
+right: -43px;
+
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+  
+.right .github-fork-ribbon {
+    background-color: #333;
+}
