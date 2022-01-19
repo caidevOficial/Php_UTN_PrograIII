@@ -1,3 +1,5 @@
+
+
 <?php
 /**
  * MIT License
@@ -74,7 +76,9 @@ $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 //* USERS AREA
 $app->group('/users', function (RouteCollectorProxy $group) {
     $group->get('[/]', \UserController::class . ':TraerTodos'); //* It Works
+    //$group->get('/{id}', \UserController::class . ':TraerUno');
     $group->post('[/]', \UserController::class . ':CargarUno'); //* It Works
+    //$group->put('/', \UserController::class . ':ModificarUno');
     $group->delete('/{id}', \UserController::class . ':BorrarUno');
     $group->post('/login/', \UserController::class . ':Login'); //* It Works
   })->add(\MWAccess::class . ':isAdmin');
@@ -82,7 +86,9 @@ $app->group('/users', function (RouteCollectorProxy $group) {
   //* EMPLOYEES AREA
 $app->group('/employees', function (RouteCollectorProxy $group) {
     $group->get('[/]', \EmployeeController::class . ':TraerTodos'); //* It Works
+    //$group->get('/{id}', \EmployeeController::class . ':TraerUno');
     $group->post('[/]', \EmployeeController::class . ':CargarUno'); //* It Works
+    //$group->put('/', \EmployeeController::class . ':ModificarUno');
     $group->delete('/{id}', \EmployeeController::class . ':BorrarUno');
   })->add(\MWAccess::class . ':isAdmin');
 
@@ -90,22 +96,31 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
   $app->group('/dish', function (RouteCollectorProxy $group) {
     $group->get('[/]', \DishController::class . ':TraerTodos') //* It Works
       ->add(\MWAccess::class . ':isEmployee');
+    //$group->get('/{id}', \DishController::class . ':TraerUno'); //! Maybe this method will be deleted
     $group->post('[/]', \DishController::class . ':CargarUno') //* It Works
       ->add(\MWAccess::class . ':isWaitress');
     $group->put('/modify', \DishController::class . ':ModificarUno') //* It Works
       ->add(\MWAccess::class . ':isEmployee');
+    // $group->delete('/{id}', \DishController::class . ':BorrarUno') //! Maybe this method will be deleted
+    //   ->add(\MWAccess::class . ':isAdmin');
   });
 
   //* ORDERS AREA
   $app->group('/order', function (RouteCollectorProxy $group) {
     $group->get('[/]', \OrderController::class . ':TraerTodos') //* It Works
       ->add(\MWAccess::class . ':isWaitress');
+    // $group->get('/list[/]', \OrderController::class . ':TraerSegunArea') //! Maybe this method will be deleted
+    //   ->add(\MWAccess::class . ':isEmployee');
     $group->get('/list/byTime', \OrderController::class . ':TraerPedidosTiempo') //* It Works
       ->add(\MWAccess::class . ':isAdmin');
+    // $group->get('/{id}', \OrderController::class . ':TraerUno') //! Implement this
+    //   ->add(\MWAccess::class . ':isEmployee');
     $group->post('[/]', \OrderController::class . ':CargarUno') //* It Works
       ->add(\MWAccess::class . ':isWaitress');
     $group->put('/', \OrderController::class . ':ModificarUno') //* It Works
       ->add(\MWAccess::class . ':isEmployee');
+    // $group->delete('/{id}', \OrderController::class . ':BorrarUno') //! Maybe this method will be deleted
+    //   ->add(\MWAccess::class . ':isAdmin');
   });
 
   //* TABLES AREA
@@ -161,7 +176,7 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
     <link rel='stylesheet' href='../css/styles.css' defer>
     <link rel='stylesheet' href='../css/animation.css' defer>
     <link rel='stylesheet' href='../css/bootstrap.css' defer>
-    <script> src='../js/script.js' defer></script>
+    <script src='../js/script.js' defer></script>
     <title>Comanda</title>
 </head>
 
@@ -221,7 +236,7 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
             <div align='center'>
                 <img src='https://github.com/caidevOficial/Resume/blob/main/media/pm/pageImgs/banner.gif?raw=true' width='600px'/><br>
                 <h1>Hi 👋, I'm Facu!</h1>
-                <h3>Pisces♓ | Developer 👨🏻‍💻 | Python🐍 | Java☕️ | C#©️ | Dreamer 💖 | Teacher👨🏻‍🏫 | A bit nerd🤓</h3><br>
+                <h3>Pisces♓ | Developer👨‍💻 | Python<img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg' alt='python' width='40' height='28'/> | GCP <img src='https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg?raw=true' alt='GCP' width='30' height='30'> | Java <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' alt='java' width='30' height='30'/> | C# <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg' alt='csharp' width='25' height='25'/> | Dreamer 💖 | Teacher👨‍🏫| A bit nerd🤓</h3><br>
                 <h3>Programming Student & Assistant Professor at the <strong>National Technological University [UTN]</strong> 👨‍💻</h3>
                 <h3>Backend programmer at <strong>Accenture</strong> 👨‍💻</h3>
             </div>
@@ -326,7 +341,7 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
                                             <img src='https://github.com/caidevOficial/Resume/blob/main/media/icons/tomcat/tomcat-original.svg?raw=true' alt='TomCat' width='40' height='40'/>
                                         </a> 
                                         <a href='https://insomnia.rest/download' target='_blank'> 
-                                            <img src='https://insomnia.rest/images/insomnia-logo.svg?raw=true' alt='Insomnia' width='40' height='40' /> 
+                                            <img src='https://insomnia.rest/images/insomnia-logo.svg?raw=true' alt='Insomnia' width='100' height='40' /> 
                                         </a>
                                         <a href='https://www.postman.com/' target='_blank'> 
                                             <img src='https://github.com/caidevOficial/Resume/blob/main/media/icons/postman/getpostman-icon.svg?raw=true' alt='Postman' width='40' height='40' /> 
@@ -479,4 +494,3 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
 // Run app
 $app->run();
 ?>
-
