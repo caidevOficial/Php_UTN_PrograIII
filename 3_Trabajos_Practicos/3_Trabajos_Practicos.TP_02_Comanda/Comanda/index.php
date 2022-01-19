@@ -285,17 +285,11 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
                                             <a href='https://www.python.org' target='_blank'>
                                                 <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg' alt='python' width='40' height='40'/>
                                             </a> 
-                                            <a href='https://www.w3schools.com/cs/' target='_blank'>
-                                                <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg' alt='csharp' width='40' height='40'/>
-                                            </a> 
-                                            <a href='https://www.cprogramming.com/' target='_blank'>
-                                                <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg' alt='c' width='40' height='40'/>
-                                            </a> 
                                             <a href='https://pandas.pydata.org/' target='_blank'> 
                                                 <img src='https://github.com/devicons/devicon/blob/master/icons/pandas/pandas-original-wordmark.svg?raw=true' alt='Pandas' width='40' height='40' /> 
                                             </a>
                                             <a href='https://numpy.org/' target='_blank'> 
-                                                <img src='https://caidevoficial.github.io/Resume/media/icons/numpy/numpy_logo.svg?raw=true' alt='NumPy' width='40' height='40' /> 
+                                                <img src='https://caidevoficial.github.io/FF_Resume/media/icons/numpy/numpy_logo.svg?raw=true' alt='NumPy' width='40' height='40' /> 
                                             </a>
                                             <a href='https://matplotlib.org/' target='_blank'>
                                                 <img src='https://camo.githubusercontent.com/9f609b65162567643c396ef42e9ccc2f755906847714389cbc1dcd707b234ebb/68747470733a2f2f6d6174706c6f746c69622e6f72672f5f7374617469632f6c6f676f325f636f6d707265737365642e7376673f7261773d74727565' alt='Matplotlib' width='40' height='40' /> 
@@ -305,6 +299,12 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
                                             </a> 
                                             <a href='https://www.java.com' target='_blank'>
                                                 <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' alt='java' width='40' height='40'/>
+                                            </a> 
+                                            <a href='https://www.w3schools.com/cs/' target='_blank'>
+                                                <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg' alt='csharp' width='40' height='40'/>
+                                            </a> 
+                                            <a href='https://www.cprogramming.com/' target='_blank'>
+                                                <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg' alt='c' width='40' height='40'/>
                                             </a> 
                                             <a href='https://www.arduino.cc/' target='_blank'>
                                                 <img src='https://cdn.worldvectorlogo.com/logos/arduino-1.svg' alt='arduino' width='40' height='40'/>
@@ -325,9 +325,36 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
                                         <a href='http://tomcat.apache.org/' target='_blank'>
                                             <img src='https://github.com/caidevOficial/Resume/blob/main/media/icons/tomcat/tomcat-original.svg?raw=true' alt='TomCat' width='40' height='40'/>
                                         </a> 
+                                        <a href='https://insomnia.rest/download' target='_blank'> 
+                                            <img src='https://insomnia.rest/images/insomnia-logo.svg?raw=true' alt='Insomnia' width='40' height='40' /> 
+                                        </a>
                                         <a href='https://www.postman.com/' target='_blank'> 
                                             <img src='https://github.com/caidevOficial/Resume/blob/main/media/icons/postman/getpostman-icon.svg?raw=true' alt='Postman' width='40' height='40' /> 
                                         </a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr align='center'>
+                                <td>
+                                    <p>
+                                        <a href='https://cloud.google.com/' target='_blank'> 
+                                            <img src='https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg?raw=true' alt='GCP' width='40' height='40'> 
+                                        </a>
+                                        <a href='https://cloud.google.com/bigquery' target='_blank'> 
+                                            <img src='https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-icon.svg' alt='BigQuery' width='40' height='40'> 
+                                        </a>
+                                        <a href='https://mariadb.org/' target='_blank'>
+                                            <img src='https://www.vectorlogo.zone/logos/mariadb/mariadb-icon.svg' alt='mariadb' width='40' height='40'/>
+                                        </a> 
+                                        <a href='https://www.mysql.com/' target='_blank'>
+                                            <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg' alt='mysql' width='40' height='40'/>
+                                        </a> 
+                                        <a href='https://www.sqlite.org/' target='_blank'>
+                                            <img src='https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg' alt='sqlite' width='40' height='40'/>
+                                        </a> 
+                                        <a href='https://www.microsoft.com/es-es/sql-server/sql-server-downloads/' target='_blank'>
+                                            <img src='https://caidevoficial.github.io/FF_Resume/media/icons/mssql/microsoft-sql-server.svg?raw=true' alt='mssql' width='40' height='40'/>
+                                        </a> 
                                     </p>
                                 </td>
                             </tr>
@@ -376,30 +403,6 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
                             <tr align='center'>
                                 <td>
                                     <p>
-                                        <a href='https://cloud.google.com/bigquery' target='_blank'> 
-                                            <img src='https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-icon.svg' alt='BigQuery' width='40' height='40'> 
-                                        </a>
-                                        <a href='https://cloud.google.com/' target='_blank'> 
-                                            <img src='https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg?raw=true' alt='GCP' width='40' height='40'> 
-                                        </a>
-                                        <a href='https://mariadb.org/' target='_blank'>
-                                            <img src='https://www.vectorlogo.zone/logos/mariadb/mariadb-icon.svg' alt='mariadb' width='40' height='40'/>
-                                        </a> 
-                                        <a href='https://www.mysql.com/' target='_blank'>
-                                            <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg' alt='mysql' width='40' height='40'/>
-                                        </a> 
-                                        <a href='https://www.sqlite.org/' target='_blank'>
-                                            <img src='https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg' alt='sqlite' width='40' height='40'/>
-                                        </a> 
-                                        <a href='https://www.microsoft.com/es-es/sql-server/sql-server-downloads/' target='_blank'>
-                                            <img src='https://caidevoficial.github.io/Resume/media/icons/mssql/microsoft-sql-server.svg?raw=true' alt='mssql' width='40' height='40'/>
-                                        </a> 
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr align='center'>
-                                <td>
-                                    <p>
                                         <a href='https://azure.microsoft.com/en-in/' target='_blank'>
                                             <img src='https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg' alt='azure' width='40' height='40'/>
                                         </a> 
@@ -422,7 +425,7 @@ $app->group('/employees', function (RouteCollectorProxy $group) {
                                             <img src='https://www.debian.org/Pics/openlogo-50.png?raw=true' alt='Debian' width='40' height='40' />
                                         </a>
                                         <a href='https://www.deepin.org/' target='_blank'>
-                                            <img src='https://caidevoficial.github.io/Resume/media/pm/deepin-logo.svg?raw=true' alt='Deepin' width='40' height='40' />
+                                            <img src='https://caidevoficial.github.io/FF_Resume/media/pm/deepin-logo.svg?raw=true' alt='Deepin' width='40' height='40' />
                                         </a>
                                         <a href='https://www.ubuntu.org/' target='_blank'>
                                             <img src='https://github.com/caidevOficial/Resume/blob/main/media/icons/ubuntu/ubuntu-plain-wordmark.svg?raw=true' alt='Ubuntu' width='40' height='40' />
